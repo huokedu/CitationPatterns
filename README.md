@@ -1,7 +1,7 @@
 # CitationPatterns
 
-[Wissens- und Contentmanagement](http://asv.informatik.uni-leipzig.de/moduls/1)
-[Praktikum Wissens- und Contentmanagement (10-202-2323)](http://asv.informatik.uni-leipzig.de/courses/13)
+[Wissens- und Contentmanagement](http://asv.informatik.uni-leipzig.de/moduls/1) . 
+[Praktikum Wissens- und Contentmanagement (10-202-2323)](http://asv.informatik.uni-leipzig.de/courses/13) . 
 
 Akademische Forschung besteht zu einem Großteil aus dem lesen und schreiben von Texten.
 Die Idee dieser Arbeit soll es sein diese Texte als eine Art Gespräch interpretierbar zu machen. 
