@@ -18,3 +18,16 @@ Studien deutlich.
 Als Texte werden in diesem Zusammmenhang Buchkapitel, Artikel in (peer-reviewed) Zeitschriften (traditionelle und OpenAccess Zeitschriften), Konferenzpaper, etc. betrachtet. 
 
 Für die Wissenschaftler besteht eine der Hauptaufgaben vorerst darin zu untersuchen welche dieser Texte für ihre Forschung relevant sind, um diese dann weiter zu untersuchen. 
+
+Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Aufgaben bearbeitet werden:
+
+## Aufgaben
+
+| Aufgabe | Beschreibung | Priorität |
+| --- | --- | --- |
+| `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten ||
+| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) ||
+| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren ||
+| `Datenstrukturierung` | Wichtige Daten => Graph ||
+
+## Zeitplan
