@@ -26,9 +26,9 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | Aufgabe | Beschreibung | Priorität | Done|
 | --- | --- | --- | --- |
 | `Datenstrukturierung` | Wichtige Daten => Graph ||<ul><li>[ ] Done</li></ul>|
-| `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten || <ul><li>[ ]</li></ul>|
-| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) |||
-| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren |||
-| `Datenstrukturierung` | Wichtige Daten => Graph |||
+| `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten || <ul><li>[ ] Done</li></ul>|
+| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) ||<ul><li>[ ] Done</li></ul>|
+| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren ||<ul><li>[ ] Done</li></ul>|
+| `Datenstrukturierung` | Wichtige Daten => Graph ||<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
