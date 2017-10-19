@@ -2,7 +2,7 @@
 
 [Wissens- und Contentmanagement (10-202-2323)](http://asv.informatik.uni-leipzig.de/moduls/1) 
 
-[Praktikum Wissens- und Contentmanagement](http://asv.informatik.uni-leipzig.de/courses/13) 
+[Praktikum Wissens- und Contentmanagement](http://asv.informatik.uni-leipzig.de/de/courses/236) 
 
 
 Akademische Forschung besteht zu einem Großteil aus dem lesen und schreiben von Texten.
@@ -23,11 +23,12 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 
 ## Aufgaben
 
-| Aufgabe | Beschreibung | Priorität |
-| --- | --- | --- |
-| `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten ||
-| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) ||
-| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren ||
-| `Datenstrukturierung` | Wichtige Daten => Graph ||
+| Aufgabe | Beschreibung | Priorität | Done|
+| --- | --- | --- | --- |
+| `Datenstrukturierung` | Wichtige Daten => Graph |||
+| `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten |||
+| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) |||
+| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren |||
+| `Datenstrukturierung` | Wichtige Daten => Graph |||
 
 ## Zeitplan
