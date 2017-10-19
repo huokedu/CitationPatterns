@@ -23,7 +23,7 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 
 ## Aufgaben
 
-| Aufgabe | Beschreibung | Priorität | Done|
+| Aufgabe | Beschreibung | Priorität | mList|
 | --- | --- | --- | --- |
 | `Datenstrukturierung` | Wichtige Daten => Graph ||<ul><li>[ ] Done</li></ul>|
 | `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten || <ul><li>[ ] Done</li></ul>|
