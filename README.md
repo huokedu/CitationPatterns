@@ -23,6 +23,12 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 
 ## Aufgaben
 
+- [ ] a task list item
+- [ ] list syntax required
+- [ ] normal **formatting**, @mentions, #1234 refs
+- [ ] incomplete
+- [x] completed
+
 | Aufgabe | Beschreibung | Priorität | Done|
 | --- | --- | --- | --- |
 | `Datenstrukturierung` | Wichtige Daten => Graph ||[ ]|
