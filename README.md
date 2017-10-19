@@ -27,6 +27,7 @@ Studien deutlich.
 Als Texte werden in diesem Zusammmenhang Buchkapitel, Artikel in (peer-reviewed) Zeitschriften (traditionelle und OpenAccess Zeitschriften), Konferenzpaper, etc. betrachtet. 
 
 Für die Wissenschaftler besteht eine der Hauptaufgaben vorerst darin zu untersuchen welche dieser Texte für ihre Forschung relevant sind, um diese dann weiter zu untersuchen. 
+Im Endeffekt könnten solche Dienste in Software wie EndNote eingebunden werden um die Produktivität einer Vielzahl von Wissenschaftlern zu steigern
 
 Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Aufgaben bearbeitet werden:
 
@@ -39,5 +40,10 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenstrukturierung` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Referenzen` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Zitation` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Relevanzmuster` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Debatte::basic` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Debatte::complex` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
