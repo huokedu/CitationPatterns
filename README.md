@@ -23,15 +23,9 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 
 ## Aufgaben
 
-- [ ] a task list item
-- [ ] list syntax required
-- [ ] normal **formatting**, @mentions, #1234 refs
-- [ ] incomplete
-- [x] completed
-
 | Aufgabe | Beschreibung | Priorität | Done|
 | --- | --- | --- | --- |
-| `Datenstrukturierung` | Wichtige Daten => Graph ||- [x] completed|
+| `Datenstrukturierung` | Wichtige Daten => Graph ||<ul><li>[x] item1</li><li>[ ] item2</li></ul>|
 | `Konzeptanalyse` | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten || [x]|
 | `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) |||
 | `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren |||
