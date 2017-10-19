@@ -1,3 +1,9 @@
+```diff
+If you want to use the arxiv crawling tool please make sure to clone at $GOPATH/src/github.com/dnk0/
+or go with
+go get github.com/dnk0/CitationPatterns/src/crawl
+```
+
 # CitationPatterns
 
 ## Modul
