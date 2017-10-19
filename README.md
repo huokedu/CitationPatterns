@@ -29,6 +29,7 @@ Als Texte werden in diesem Zusammmenhang Buchkapitel, Artikel in (peer-reviewed)
 Für die Wissenschaftler besteht eine der Hauptaufgaben vorerst darin zu untersuchen welche dieser Texte für ihre Forschung relevant sind, um diese dann weiter zu untersuchen. 
 Im Endeffekt könnten solche Dienste in Software wie EndNote eingebunden werden um die Produktivität einer Vielzahl von Wissenschaftlern zu steigern
 
+---
 Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Aufgaben bearbeitet werden:
 
 ## Aufgaben
