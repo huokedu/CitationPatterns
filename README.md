@@ -40,10 +40,10 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenstrukturierung` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Referenzen` | searchable refs | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Zitation` | searchable cites | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Relevanzmuster` | e.g. everything cited by mr. x | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Debatte::basic` | A =Kritik=> B  | TBD |<ul><li>[ ] Done</li></ul>|
-| `Debatte::complex` | responses, critics, cluster like `debates sparked by x` etc. | TBD |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Referenzen` | `searchable refs` | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Zitation` | `searchable cites` | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Relevanzmuster` | e.g. `everything cited by mr. x`, `who cited more than 5 articles of a specific cluster` | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Debatte::basic` | `A =Kritik=> B`  | TBD |<ul><li>[ ] Done</li></ul>|
+| `Debatte::complex` | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
