@@ -1,9 +1,18 @@
 # CitationPatterns
 
+## Modul
+
 [Wissens- und Contentmanagement (10-202-2323)](http://asv.informatik.uni-leipzig.de/moduls/1) 
 
 [Praktikum Wissens- und Contentmanagement](http://asv.informatik.uni-leipzig.de/de/courses/236) 
 
+## Studenten
+
+1. [Simon Bordewisch](https://github.com/sic42) - 
+2. [Tim Niehoff](https://github.com/regexpr) - 
+3. [Dennis Kreußel](https://github.com/dnk0) - #3673972
+
+## Einleitung
 
 Akademische Forschung besteht zu einem Großteil aus dem lesen und schreiben von Texten.
 Die Idee dieser Arbeit soll es sein diese Texte als eine Art Gespräch interpretierbar zu machen. 
