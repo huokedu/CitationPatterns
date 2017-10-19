@@ -44,6 +44,6 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | `Analyse::Zitation` | searchable cites | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Analyse::Relevanzmuster` | e.g. everything cited by mr. x | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Debatte::basic` | A =Kritik=> B  | TBD |<ul><li>[ ] Done</li></ul>|
-| `Debatte::complex` | responses, critics etc. | TBD |<ul><li>[ ] Done</li></ul>|
+| `Debatte::complex` | responses, critics, cluster like `debates sparked by x` etc. | TBD |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
