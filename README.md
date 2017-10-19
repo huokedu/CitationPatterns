@@ -9,7 +9,7 @@
 ## Studenten
 
 1. [Simon Bordewisch](https://github.com/sic42) - #3684379
-2. [Tim Niehoff](https://github.com/regexpr) -
+2. [Tim Niehoff](https://github.com/regexpr) - #3678507
 3. [Dennis Kreußel](https://github.com/dnk0) - #3673972
 
 ## Einleitung
@@ -36,14 +36,14 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 
 | Aufgabe | Beschreibung | Priorität | mList|
 | --- | --- | --- | --- |
-| [`Konzeptanalyse`](doc/Konzeptanalyse.md) | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten | Must-have | <ul><li>[ ] Done</li></ul>|
-| `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Datenstrukturierung` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Referenzen` | `searchable refs` | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Zitation` | `searchable cites` | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Relevanzmuster` | e.g. `everything cited by mr. x`, `who cited more than 5 articles of a specific cluster` | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Debatte::basic` | `A =Kritik=> B`  | TBD |<ul><li>[ ] Done</li></ul>|
-| `Debatte::complex` | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD |<ul><li>[ ] Done</li></ul>|
+| [`Konzeptanalyse` :link:](doc/Konzeptanalyse.md) | Betrachten von Kernkonzepten (z.B. Relevanz) und was müssen uns Datensätze dafür bieten | Must-have | <ul><li>[ ] Done</li></ul>|
+| [`Datenbeschaffung` :soon:]() | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Datenanalyse` :soon:]() | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Datenstrukturierung` :soon:]() | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Analyse::Referenzen` :soon:]() | `searchable refs` | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Analyse::Zitation` :soon:]() | `searchable cites` | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Analyse::Relevanzmuster` :soon:]() | e.g. `everything cited by mr. x`, `who cited more than 5 articles of a specific cluster` | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Debatte::basic` :soon:]() | `A =Kritik=> B`  | TBD |<ul><li>[ ] Done</li></ul>|
+| [`Debatte::complex` :soon:]() | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
