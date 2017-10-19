@@ -8,7 +8,7 @@
 
 ## Studenten
 
-1. [Simon Bordewisch](https://github.com/sic42) - #3684379
+1. [Simon Bordewisch](https://github.com/sic42) - 
 2. [Tim Niehoff](https://github.com/regexpr) - 
 3. [Dennis Kreußel](https://github.com/dnk0) - #3673972
 
@@ -40,10 +40,10 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | `Datenbeschaffung` | Analyse möglicher Datensätze, Crawloptionen, Identifikation möglicher Scopes (z.B. wäre es cool zu überprüfen wie unsere Ansätze auf Medizinischen Artikeln im Vergleich zu CS-Artikeln abschneiden?) | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenanalyse` | Erstmal paar Statistiken machen vielleicht um mögliche Biases etc. zu identifizieren | Must-have |<ul><li>[ ] Done</li></ul>|
 | `Datenstrukturierung` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Referenzen` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Zitation` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Analyse::Relevanzmuster` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Debatte::basic` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
-| `Debatte::complex` | Wichtige Daten => Graph | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Referenzen` | searchable refs | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Zitation` | searchable cites | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Analyse::Relevanzmuster` | e.g. everything cited by mr. x | Must-have |<ul><li>[ ] Done</li></ul>|
+| `Debatte::basic` | A =Kritik=> B  | TBD |<ul><li>[ ] Done</li></ul>|
+| `Debatte::complex` | responses, critics etc. | TBD |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
