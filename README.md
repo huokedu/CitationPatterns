@@ -8,7 +8,7 @@
 
 ## Studenten
 
-1. [Simon Bordewisch](https://github.com/sic42) - 
+1. [Simon Bordewisch](https://github.com/sic42) - #3684379
 2. [Tim Niehoff](https://github.com/regexpr) - 
 3. [Dennis Kreußel](https://github.com/dnk0) - #3673972
 
