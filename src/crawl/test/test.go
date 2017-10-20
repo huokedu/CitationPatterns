@@ -8,9 +8,9 @@ import (
 	"github.com/johnnadratowski/golang-neo4j-bolt-driver/structures/graph"
 )
 
-func SlowNCleanTestNeo4j() {
+func SlowNCleanTestNeo4j(name string, pw string, host string, port string) {
 	driver := bolt.NewDriver()
-	conn, err := driver.OpenNeo("bolt://slashdelta.com:7687")
+	conn, err := driver.OpenNeo("bolt://" + name + ":" + pw + "@" + host + ":" + port)
 	if err != nil {
 		panic(err)
 	}
