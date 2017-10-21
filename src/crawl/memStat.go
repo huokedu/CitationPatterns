@@ -35,6 +35,7 @@ func runMemStats(f *fetchbot.Fetcher, tick time.Duration) {
 }
 
 func printMemStats(di *fetchbot.DebugInfo) {
+	print("\033[H\033[2J")
 	var mem runtime.MemStats
 	runtime.ReadMemStats(&mem)
 	buf := bytes.NewBuffer(nil)
@@ -48,5 +49,6 @@ func printMemStats(di *fetchbot.DebugInfo) {
 		buf.WriteString(fmt.Sprintf("\tNumHosts: %d\n", di.NumHosts))
 	}
 	buf.WriteString(strings.Repeat("=", 72))
+	buf.WriteString("\n")
 	fmt.Println(buf.String())
 }
