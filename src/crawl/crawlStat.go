@@ -2,8 +2,8 @@ package main
 
 import (
 	"bytes"
-	"fmt"
 	"runtime"
+	"strconv"
 	"strings"
 
 	tm "github.com/buger/goterm"
@@ -15,27 +15,23 @@ func getCrawlStats() (*tm.Box, int, int) {
 	var lineCount int
 	runtime.ReadMemStats(&mem)
 	buf := bytes.NewBuffer(nil)
-	buf.WriteString("MEMORY PROFILE:\n")
+	buf.WriteString("LOG PROFILE:\n")
 	lineCount++
 	buf.WriteString(strings.Repeat("=", 72) + "\n")
 	lineCount++
-	buf.WriteString(fmt.Sprintf("Alloc: %d Kb\n", mem.Alloc/1024))
+	buf.WriteString("[ " + strconv.Itoa(crawledCount) + " finalized / " + strconv.Itoa(crawledStarted) + " requested ]\n")
 	lineCount++
-	buf.WriteString(fmt.Sprintf("TotalAlloc: %d Kb\n", mem.TotalAlloc/1024))
-	lineCount++
-	buf.WriteString(fmt.Sprintf("NumGC: %d\n", mem.NumGC))
-	lineCount++
-	buf.WriteString(fmt.Sprintf("Goroutines: %d\n", runtime.NumGoroutine()))
-	lineCount++
-	buf.WriteString(fmt.Sprintf("NumCrawled: %d\n", len(crawled)))
-	lineCount++
+	for _, log := range crawled {
+
+		buf.WriteString(log + "\n")
+		lineCount++
+	}
 	buf.WriteString("\n")
 	lineCount++
 
-	box := tm.NewBox(72, lineCount+1, 0)
+	box := tm.NewBox(100|tm.PCT, lineCount+1, 0)
 
-	//box.Write([]byte(buf.String()))
-	//fmt.Println(box.String())
+	box.Write([]byte(buf.String()))
 
 	return box, lineCount + 2, 72
 }

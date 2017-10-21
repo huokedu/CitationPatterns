@@ -5,12 +5,10 @@ import (
 	"fmt"
 	"net/http"
 	"runtime"
-	"time"
 
 	"github.com/PuerkitoBio/fetchbot"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/jinzhu/configor"
-	pb "gopkg.in/cheggaaa/pb.v1"
 )
 
 // config represents the datastructure parsed from the "config.yml"-config-file
@@ -26,20 +24,22 @@ var config = struct {
 
 var (
 	// url represents the general url template for arxiv
-	url          = "http://arxiv.org/list/cs.%s/%02d%02d?show=1000"
-	memStats     = flag.Duration("memstats", 0, "display memory statistics at a given interval")
-	crawled      []string
-	crawledStats []string
+	url            = "http://arxiv.org/list/cs.%s/%02d%02d?show=1000"
+	memStats       = flag.Duration("memstats", 0, "display memory statistics at a given interval")
+	crawled        []string
+	crawledCount   int
+	crawledStarted int
 )
 
 func logHandler(wrapped fetchbot.Handler) fetchbot.Handler {
 	return fetchbot.HandlerFunc(func(ctx *fetchbot.Context, res *http.Response, err error) {
 		if err == nil {
-			fmt.Printf("[%d] %s %s - %s\n", res.StatusCode, ctx.Cmd.Method(), ctx.Cmd.URL(), res.Header.Get("Content-Type"))
+			crawled = append(crawled, fmt.Sprintf("[%d] %s %s - %s\n", res.StatusCode, ctx.Cmd.Method(), ctx.Cmd.URL(), res.Header.Get("Content-Type")))
+			crawledCount++
 		}
 		//body, err := ioutil.ReadAll(res.Body)
-		var urlCtx = ctx.Cmd.URL().String()
-		crawled = append(crawled, urlCtx)
+		//var urlCtx = ctx.Cmd.URL().String()
+		//crawled = append(crawled, urlCtx)
 		//fmt.Print(string(body[:]))
 		wrapped.Handle(ctx, res, err)
 	})
@@ -53,7 +53,7 @@ func main() {
 
 	// Handle all errors the same
 	mux.HandleErrors(fetchbot.HandlerFunc(func(ctx *fetchbot.Context, res *http.Response, err error) {
-		fmt.Printf("[ERR] %s %s - %s\n", ctx.Cmd.Method(), ctx.Cmd.URL(), err)
+		crawled = append(crawled, fmt.Sprintf("[ERR] %s %s - %s\n", ctx.Cmd.Method(), ctx.Cmd.URL(), err))
 	}))
 
 	// Handle GET requests for html responses, to parse the body and enqueue all links as HEAD
@@ -87,7 +87,6 @@ func main() {
 		defer func() {
 			runtime.GC()
 			printMemStats(nil)
-			printStats()
 		}()
 	}
 
@@ -97,18 +96,10 @@ func main() {
 		for i := 1; i <= 17; i++ {
 			for j := 1; j <= 12; j++ {
 				var finalURL = fmt.Sprintf("http://arxiv.org/list/cs.%s/%02d%02d?show=1000", v, i, j)
-				q.SendStringGet(finalURL)
+				go q.SendStringGet(finalURL)
+				crawledStarted++
 			}
 		}
 	}
-	count := 100000
-	bar := pb.StartNew(count)
-
-	for i := 0; i < count; i++ {
-		bar.Increment()
-		time.Sleep(time.Millisecond)
-	}
-	bar.FinishPrint("The End!")
-
 	q.Close()
 }

@@ -37,7 +37,10 @@ func runMemStats(f *fetchbot.Fetcher, tick time.Duration) {
 
 func printMemStats(di *fetchbot.DebugInfo) {
 	box, _, _ := getMemStats(di)
+	boxCrawl, _, _ := getCrawlStats()
+
 	fmt.Println(box.String())
+	fmt.Println(boxCrawl.String())
 }
 
 func getMemStats(di *fetchbot.DebugInfo) (*tm.Box, int, int) {
