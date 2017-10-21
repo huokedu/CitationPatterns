@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"net/http"
 	"runtime"
 	"time"
@@ -27,8 +26,10 @@ var config = struct {
 
 var (
 	// url represents the general url template for arxiv
-	url      = "http://arxiv.org/list/cs.%s/%02d%02d?show=1000"
-	memStats = flag.Duration("memstats", 0, "display memory statistics at a given interval")
+	url          = "http://arxiv.org/list/cs.%s/%02d%02d?show=1000"
+	memStats     = flag.Duration("memstats", 0, "display memory statistics at a given interval")
+	crawled      []string
+	crawledStats []string
 )
 
 func logHandler(wrapped fetchbot.Handler) fetchbot.Handler {
@@ -36,8 +37,10 @@ func logHandler(wrapped fetchbot.Handler) fetchbot.Handler {
 		if err == nil {
 			fmt.Printf("[%d] %s %s - %s\n", res.StatusCode, ctx.Cmd.Method(), ctx.Cmd.URL(), res.Header.Get("Content-Type"))
 		}
-		body, err := ioutil.ReadAll(res.Body)
-		fmt.Print(string(body[:]))
+		//body, err := ioutil.ReadAll(res.Body)
+		var urlCtx = ctx.Cmd.URL().String()
+		crawled = append(crawled, urlCtx)
+		//fmt.Print(string(body[:]))
 		wrapped.Handle(ctx, res, err)
 	})
 }
@@ -84,6 +87,7 @@ func main() {
 		defer func() {
 			runtime.GC()
 			printMemStats(nil)
+			printStats()
 		}()
 	}
 
@@ -99,6 +103,7 @@ func main() {
 	}
 	count := 100000
 	bar := pb.StartNew(count)
+
 	for i := 0; i < count; i++ {
 		bar.Increment()
 		time.Sleep(time.Millisecond)
