@@ -75,7 +75,7 @@ func main() {
 	//fmt.Printf("config: %#v", config)
 	//test.SlowNCleanTestNeo4j(config.DB.Name, config.DB.Password, config.DB.Host, config.DB.Port)
 
-	categories := map[string]string{"cv": "CV"}
+	categories := initCategories()
 
 	h := logHandler(mux)
 	f := fetchbot.New(h)
@@ -98,7 +98,7 @@ func main() {
 	for _, v := range categories {
 		for i := 17; i >= 1; i-- {
 			for j := 1; j <= 12; j++ {
-				var finalURL = fmt.Sprintf("http://arxiv.org/list/cs.%s/%02d%02d?show=1000", v, i, j)
+				var finalURL = fmt.Sprintf("http://arxiv.org/list/%s/%02d%02d?show=1000", v, i, j)
 				go q.SendStringGet(finalURL)
 				crawledStarted++
 			}
