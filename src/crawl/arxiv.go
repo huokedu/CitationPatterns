@@ -61,10 +61,13 @@ func main() {
 	mux.Response().Method("GET").ContentType("text/html").Handler(fetchbot.HandlerFunc(
 		func(ctx *fetchbot.Context, res *http.Response, error error) {
 			// Process the body to find the links
-			_, err := goquery.NewDocumentFromResponse(res)
+			doc, err := goquery.NewDocumentFromResponse(res)
 			if err != nil {
 				fmt.Printf("[ERR] %s %s - %s\n", ctx.Cmd.Method(), ctx.Cmd.URL(), err)
 				return
+			}
+			if doc != nil {
+				go handleDoc(doc)
 			}
 		}))
 
@@ -93,7 +96,7 @@ func main() {
 	q := f.Start()
 
 	for _, v := range categories {
-		for i := 1; i <= 17; i++ {
+		for i := 17; i >= 1; i-- {
 			for j := 1; j <= 12; j++ {
 				var finalURL = fmt.Sprintf("http://arxiv.org/list/cs.%s/%02d%02d?show=1000", v, i, j)
 				go q.SendStringGet(finalURL)
