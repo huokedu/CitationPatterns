@@ -3,3 +3,4 @@ node_modules
 acm.txt
 dblp.txt
 acm_output.txt
+config.json
