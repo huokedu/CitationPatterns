@@ -3,14 +3,15 @@ package main
 func initCategories() map[string]string {
 	categories := make(map[string]string)
 
-	categories["cs.AI"] = "cs.AI"
+	/* categories["cs.AI"] = "cs.AI"
 	categories["cs.CL"] = "cs.CL"
 	categories["cs.CC"] = "cs.CC"
 	categories["cs.CE"] = "cs.CE"
 	categories["cs.CG"] = "cs.CG"
 	categories["cs.GT"] = "cs.GT"
+	*/
 	categories["cs.CV"] = "cs.CV"
-	categories["cs.CY"] = "cs.CY"
+	/*categories["cs.CY"] = "cs.CY"
 	categories["cs.CR"] = "cs.CR"
 	categories["cs.DS"] = "cs.DS"
 	categories["cs.DB"] = "cs.DB"
@@ -44,6 +45,7 @@ func initCategories() map[string]string {
 	categories["cs.SD"] = "cs.SD"
 	categories["cs.SC"] = "cs.SC"
 	categories["cs.SY"] = "cs.SY"
+	*/
 
 	return categories
 }

@@ -96,7 +96,7 @@ func main() {
 	q := f.Start()
 
 	for _, v := range categories {
-		for i := 17; i >= 1; i-- {
+		for i := 17; i >= 13; i-- {
 			for j := 1; j <= 12; j++ {
 				var finalURL = fmt.Sprintf("http://arxiv.org/list/%s/%02d%02d?show=1000", v, i, j)
 				go q.SendStringGet(finalURL)

@@ -35,12 +35,12 @@ func handleDoc(doc *goquery.Document) {
 func downloadAndSavePdf(url string) {
 	tokens := strings.Split(url, "/")
 	fileName := tokens[len(tokens)-1]
-	crawled = append(crawled, fmt.Sprint("Downloading ", url, " to ", " save/"+fileName+".pdf"))
+	crawled = append(crawled, fmt.Sprint("Downloading ", url, " to ", " save/pdf/"+fileName+".pdf"))
 
 	// TODO: check file existence first with io.IsExist
-	output, err := os.Create("save/" + fileName + ".pdf")
+	output, err := os.Create("save/pdf/" + fileName + ".pdf")
 	if err != nil {
-		crawled = append(crawled, fmt.Sprint("Error while creating", "save/"+fileName+".pdf", "-", err))
+		crawled = append(crawled, fmt.Sprint("Error while creating", "save/pdf/"+fileName+".pdf", "-", err))
 		return
 	}
 	defer output.Close()
@@ -59,4 +59,5 @@ func downloadAndSavePdf(url string) {
 	}
 
 	fmt.Println(n, "bytes downloaded.")
+	//processPDF("save/" + fileName + ".pdf")
 }

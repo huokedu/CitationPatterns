@@ -1,4 +1,5 @@
 config.yml
 arxiv
 crawl
-save/*.pdf
+save/pdf/*.pdf
+save/txt/*.txt
