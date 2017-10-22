@@ -10,10 +10,10 @@ func initCategories() map[string]string {
 	categories["cs.CG"] = "cs.CG"
 	categories["cs.GT"] = "cs.GT"
 	*/
-	categories["cs.CV"] = "cs.CV"
-	/*categories["cs.CY"] = "cs.CY"
+	//categories["cs.CV"] = "cs.CV" // Done
+	categories["cs.CY"] = "cs.CY"
 	categories["cs.CR"] = "cs.CR"
-	categories["cs.DS"] = "cs.DS"
+	/*categories["cs.DS"] = "cs.DS"
 	categories["cs.DB"] = "cs.DB"
 	categories["cs.DL"] = "cs.DL"
 	categories["cs.DM"] = "cs.DM"
