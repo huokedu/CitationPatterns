@@ -1,0 +1,13 @@
+{
+  "name": "dblp",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dnk0",
+  "dependencies": {
+    "neo4j": "^2.0.0-RC2"
+  }
+}
