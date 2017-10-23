@@ -1,18 +1,17 @@
-var config = require('./config.json');
-
+let config = require('./config.json');
 const neo4j = require('neo4j-driver').v1;
-
 const driver = neo4j.driver("bolt://slashdelta.com:7687", neo4j.auth.basic(config.user, config.pw));
 const session = driver.session();
 
 function createNode(obj){
-  var resultPromise = session.run(
+  let resultPromise = session.run(
     'CREATE (u:Paper {title: {title},author:{author},year:{year}, index: {index}, abstract:{abstract}}) RETURN u',
     obj
   );
 
-  resultPromise.then(result => {
+  return resultPromise.then(result => {
     session.close();
+    return Promise.resolve("foobar")
   }).catch(err => {
     console.log(err);
     session.close();
@@ -29,17 +28,21 @@ function emptyObject() {
     abstract: ""
   }
 }
-var obj = emptyObject();
 
-var lineReader = require('readline').createInterface({
+let obj = emptyObject();
+
+let lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('acm.txt')
 });
 
 lineReader.on('line', function (line) {
   if(line === ""){
-    createNode(obj);
+    lineReader.pause()
+    createNode(obj).then((t) => {
+      lineReader.resume();
+    })
     obj = emptyObject();
-  }else {
+  } else {
     if(line.startsWith("#*")){
       obj.title = line.replace("#*", '');
     }
