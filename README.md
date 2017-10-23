@@ -18,6 +18,8 @@ go get github.com/dnk0/CitationPatterns/src/crawl
 2. [Tim Niehoff](https://github.com/regexpr) - #3678507
 3. [Dennis Kreußel](https://github.com/dnk0) - #3673972
 
+## Scrum
+[`Mitschriften` :link:](scrum/index.md)
 ## Einleitung
 
 Akademische Forschung besteht zu einem Großteil aus dem lesen und schreiben von Texten.
