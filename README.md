@@ -49,7 +49,7 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | [`Analyse::Referenzen` :soon:]() | `searchable refs` | Must-have |<ul><li>[ ] Done</li></ul>|
 | [`Analyse::Zitation` :soon:]() | `searchable cites` | Must-have |<ul><li>[ ] Done</li></ul>|
 | [`Analyse::Relevanzmuster` :soon:]() | e.g. `everything cited by mr. x`, `who cited more than 5 articles of a specific cluster` | Must-have |<ul><li>[ ] Done</li></ul>|
-| [`Debatte::basic` :soon:]() | `A =Kritik=> B`  | TBD |<ul><li>[ ] Done</li></ul>|
-| [`Debatte::complex` :soon:]() | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD |<ul><li>[ ] Done</li></ul>|
+| [`Debatte::basic` :soon:]() | `A =Kritik=> B`  | Must-have |<ul><li>[ ] Done</li></ul>|
+| [`Debatte::complex` :soon:]() | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD(decided after Debatte::basic) |<ul><li>[ ] Done</li></ul>|
 
 ## Zeitplan
