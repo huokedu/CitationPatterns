@@ -6,23 +6,16 @@ const driver = neo4j.driver("bolt://slashdelta.com:7687", neo4j.auth.basic(confi
 const session = driver.session();
 
 function createNode(obj){
-  var obj_int = obj
   var resultPromise = session.run(
     'CREATE (u:Paper {title: {title},author:{author},year:{year}, index: {index}, abstract:{abstract}}) RETURN u',
-    obj_int
+    obj
   );
 
   resultPromise.then(result => {
     session.close();
-
-    const singleRecord = result.records[0];
-    const node = singleRecord.get(0);
-
-    console.log(node.properties.title);
-
-    // on application exit:
   }).catch(err => {
     console.log(err);
+    session.close();
   });
 }
 
