@@ -19,9 +19,9 @@ function createNode(obj){
   });
 }
 
-function createEdge(obj) {
+function createEdge(obj,char) {
   obj.references.map((ref) => {
-    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b);\n", function (err) {
+    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b);"+char, function (err) {
       if (err) console.log(err);
       console.log('Saved!');
     });
@@ -45,14 +45,18 @@ let lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('acm.txt')
 });
 
-lineReader.on('line', function (line) {
+lineReader.on('line', function (number,line) {
   if(line === ""){
     //lineReader.pause()
     /*createNode(obj).then(() => {
       lineReader.resume();
     })
     */
-    createEdge(obj);
+    if(number % 100 == 0){
+      createEdge(obj,"\n");
+    } else {
+      createEdge(obj,"");
+    }
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){

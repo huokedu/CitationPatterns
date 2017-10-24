@@ -35,9 +35,16 @@ let lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('refs.cql')
 });
 
-lineReader.on('line', function (line) {
-  lineReader.pause();
-  doQuery(line);
-  setTimeout(lineReader.resume, 3);
+let query = "";
+lineReader.on('line', function (number,line) {
+  query+=line;
+  if(number % 20 == 19) {
+    lineReader.pause();
+    doQuery(query).then(() => {
+      console.log("done 20");
+      lineReader.resume();
+    });
+    query= "";
+  }
 });
 driver.close();

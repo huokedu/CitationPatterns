@@ -1,6 +1,6 @@
-MATCH (a:Paper),(b:Paper) WHERE a.index = '9' AND b.index = '2135000' CREATE (a)-[r:REFERENCES]->(b)
-MATCH (a:Paper),(b:Paper) WHERE a.index = '9' AND b.index = '289258' CREATE (a)-[r:REFERENCES]->(b)
-MATCH (a:Paper),(b:Paper) WHERE a.index = '11' AND b.index = '408637' CREATE (a)-[r:REFERENCES]->(b)
+MATCH (a:Paper),(b:Paper) WHERE a.index = '9' AND b.index = '2135000' CREATE (a)-[r:REFERENCES]->(b);
+MATCH (a:Paper),(b:Paper) WHERE a.index = '9' AND b.index = '289258' CREATE (a)-[r:REFERENCES]->(b);
+MATCH (a:Paper),(b:Paper) WHERE a.index = '11' AND b.index = '408637' CREATE (a)-[r:REFERENCES]->(b);
 MATCH (a:Paper),(b:Paper) WHERE a.index = '11' AND b.index = '600827' CREATE (a)-[r:REFERENCES]->(b)
 MATCH (a:Paper),(b:Paper) WHERE a.index = '11' AND b.index = '688896' CREATE (a)-[r:REFERENCES]->(b)
 MATCH (a:Paper),(b:Paper) WHERE a.index = '11' AND b.index = '2135000' CREATE (a)-[r:REFERENCES]->(b)
