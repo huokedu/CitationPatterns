@@ -18,10 +18,15 @@ function createNode(obj){
   });
 }
 
-function createEdge(obj, index) {
-    let resultPromise = session.run(
-      "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r"
-    );
+function createEdge(obj) {
+  let query = "";
+  obj.references.map((ref) => {
+    query += "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r;\n";
+  });
+
+  if (query != ""){
+    let resultPromise = session.run(query);
+
     return resultPromise.then(result => {
       session.close();
       return Promise.resolve();
@@ -30,6 +35,7 @@ function createEdge(obj, index) {
       session.close();
       return Promise.reject();
     });
+  }
 }
 
 function emptyObject() {
@@ -56,11 +62,9 @@ lineReader.on('line', function (line) {
       lineReader.resume();
     })
     */
-    obj.references.map((ref) => {
-      createEdge(obj, ref).then(() => {
-        lineReader.resume();
-      })
-    });
+    createEdge(obj).then(() => {
+      lineReader.resume();
+    })
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){
