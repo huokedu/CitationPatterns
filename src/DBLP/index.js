@@ -45,7 +45,9 @@ let lineReader = require('readline').createInterface({
   input: require('fs').createReadStream('acm.txt')
 });
 
-lineReader.on('line', function (number,line) {
+let number = 0;
+lineReader.on('line', function (line) {
+  number++;
   if(line === ""){
     //lineReader.pause()
     /*createNode(obj).then(() => {
