@@ -35,6 +35,8 @@ function createEdge(obj) {
       session.close();
       return Promise.reject();
     });
+  } else {
+    return Promise.resolve();
   }
 }
 
