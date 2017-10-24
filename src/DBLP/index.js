@@ -20,24 +20,12 @@ function createNode(obj){
 
 function createEdge(obj) {
   let query = "";
+  let promiseArray = [];
   obj.references.map((ref) => {
-    query += "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b)\n";
+    promiseArray.push(session.run("MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r"));
   });
 
-  if (query != ""){
-    let resultPromise = session.run(query);
-
-    return resultPromise.then(result => {
-      session.close();
-      return Promise.resolve();
-    }).catch(err => {
-      console.log(err);
-      session.close();
-      return Promise.reject();
-    });
-  } else {
-    return Promise.resolve();
-  }
+  return promiseArray;
 }
 
 function emptyObject() {
@@ -64,7 +52,7 @@ lineReader.on('line', function (line) {
       lineReader.resume();
     })
     */
-    createEdge(obj).then(() => {
+    Promise.all(createEdge(obj)).then(() => {
       lineReader.resume();
     })
     obj = emptyObject();
