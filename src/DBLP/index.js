@@ -1,3 +1,4 @@
+var fs = require('fs');
 let config = require('./config.json');
 const neo4j = require('neo4j-driver').v1;
 const driver = neo4j.driver("bolt://slashdelta.com:7687", neo4j.auth.basic(config.user, config.pw));
@@ -19,17 +20,12 @@ function createNode(obj){
 }
 
 function createEdge(obj) {
-  let query = "";
-  let promiseArray = [];
   obj.references.map((ref) => {
-    let promise = session.run("MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r")
-    promiseArray.push(promise);
-    promise.then(() => {
-      console.log("inserted one rel for ["+obj.index+","+ref+"]");
-    })
+    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b)\n", function (err) {
+      if (err) console.log(err);
+      console.log('Saved!');
+    });
   });
-
-  return promiseArray;
 }
 
 function emptyObject() {
@@ -51,16 +47,12 @@ let lineReader = require('readline').createInterface({
 
 lineReader.on('line', function (line) {
   if(line === ""){
-    lineReader.pause()
+    //lineReader.pause()
     /*createNode(obj).then(() => {
       lineReader.resume();
     })
     */
-    Promise.all(createEdge(obj)).then(() => {
-      lineReader.resume();
-    }, reason => {
-      console.log(reason)
-    });
+    createEdge(obj);
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){
