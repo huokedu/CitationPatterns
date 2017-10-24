@@ -37,8 +37,7 @@ let lineReader = require('readline').createInterface({
 
 lineReader.on('line', function (line) {
   lineReader.pause();
-  doQuery(line).then(() => {
-    lineReader.resume();
-  });
+  doQuery(line);
+  setTimeout(lineReader.resume(), 3);
 });
 driver.close();
