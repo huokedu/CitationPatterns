@@ -21,7 +21,7 @@ function createNode(obj){
 
 function createEdge(obj) {
   obj.references.map((ref) => {
-    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b)\n", function (err) {
+    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b);\n", function (err) {
       if (err) console.log(err);
       console.log('Saved!');
     });
