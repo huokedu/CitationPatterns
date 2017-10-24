@@ -8,13 +8,29 @@ function createNode(obj){
     'CREATE (u:Paper {title: {title},author:{author},year:{year}, index: {index}, abstract:{abstract}}) RETURN u',
     obj
   );
-
   return resultPromise.then(result => {
     session.close();
-    return Promise.resolve("foobar")
+    return Promise.resolve();
   }).catch(err => {
     console.log(err);
     session.close();
+    return Promise.reject();
+  });
+}
+
+function createEdge(obj) {
+  obj.references.map((ref) => {
+    let resultPromise = session.run(
+      "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r"
+    );
+    return resultPromise.then(result => {
+      session.close();
+      return Promise.resolve();
+    }).catch(err => {
+      console.log(err);
+      session.close();
+      return Promise.reject();
+    });
   });
 }
 
@@ -38,7 +54,11 @@ let lineReader = require('readline').createInterface({
 lineReader.on('line', function (line) {
   if(line === ""){
     lineReader.pause()
-    createNode(obj).then((t) => {
+    /*createNode(obj).then(() => {
+      lineReader.resume();
+    })
+    */
+    createEdge(obj).then(() => {
       lineReader.resume();
     })
     obj = emptyObject();
