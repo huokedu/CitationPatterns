@@ -18,8 +18,7 @@ function createNode(obj){
   });
 }
 
-function createEdge(obj) {
-  obj.references.map((ref) => {
+function createEdge(obj, index) {
     let resultPromise = session.run(
       "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r"
     );
@@ -31,7 +30,6 @@ function createEdge(obj) {
       session.close();
       return Promise.reject();
     });
-  });
 }
 
 function emptyObject() {
@@ -58,9 +56,11 @@ lineReader.on('line', function (line) {
       lineReader.resume();
     })
     */
-    createEdge(obj).then(() => {
-      lineReader.resume();
-    })
+    obj.references.map((ref) => {
+      createEdge(obj, ref).then(() => {
+        lineReader.resume();
+      })
+    });
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){
