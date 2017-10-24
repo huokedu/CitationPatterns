@@ -54,7 +54,9 @@ lineReader.on('line', function (line) {
     */
     Promise.all(createEdge(obj)).then(() => {
       lineReader.resume();
-    })
+    }).reject((err)=>{
+      console.log(err)
+    });
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){
