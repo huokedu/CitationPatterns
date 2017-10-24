@@ -54,8 +54,8 @@ lineReader.on('line', function (line) {
     */
     Promise.all(createEdge(obj)).then(() => {
       lineReader.resume();
-    }).reject((err)=>{
-      console.log(err)
+    }, reason => {
+      console.log(reason)
     });
     obj = emptyObject();
   } else {
