@@ -25,7 +25,7 @@ function createEdge(obj) {
     let promise = session.run("MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r")
     promiseArray.push(promise);
     promise.then(() => {
-      console.log("inserted one rel");
+      console.log("inserted one rel for ["+obj.index+","+ref+"]");
     })
   });
 
