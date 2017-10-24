@@ -21,7 +21,7 @@ function createNode(obj){
 function createEdge(obj) {
   let query = "";
   obj.references.map((ref) => {
-    query += "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r;\n";
+    query += "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b) RETURN r\n";
   });
 
   if (query != ""){
