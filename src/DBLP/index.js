@@ -9,6 +9,8 @@ function createNode(obj){
     'CREATE (u:Paper {title: {title},author:{author},year:{year}, index: {index}, abstract:{abstract}}) RETURN u',
     obj
   );
+
+  promiseArr.push(resultPromise);
   return resultPromise.then(result => {
     session.close();
     return Promise.resolve();
@@ -20,12 +22,16 @@ function createNode(obj){
 }
 
 function createEdge(obj,char) {
+  let promiseArr = [];
   obj.references.map((ref) => {
-    fs.appendFile('refs.cql', "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b);"+char, function (err) {
-      if (err) console.log(err);
-      console.log('Saved!');
-    });
+    let resultPromise = session.run(
+      "MATCH (a:Paper),(b:Paper) WHERE a.index = '"+obj.index+"' AND b.index = '"+ref+"' CREATE (a)-[r:REFERENCES]->(b);",
+      obj
+    );
+
+    promiseArr.push(resultPromise);
   });
+  return promiseArr;
 }
 
 function emptyObject() {
@@ -49,16 +55,15 @@ let number = 0;
 lineReader.on('line', function (line) {
   number++;
   if(line === ""){
-    //lineReader.pause()
+    lineReader.pause()
     /*createNode(obj).then(() => {
       lineReader.resume();
     })
     */
-    if(number % 100 == 0){
-      createEdge(obj,"\n");
-    } else {
-      createEdge(obj,"");
-    }
+
+    Promise.all(createEdge(obj)).then(values => {
+      lineReader.resume();
+    });
     obj = emptyObject();
   } else {
     if(line.startsWith("#*")){
