@@ -20,7 +20,7 @@ class Home extends React.Component {
       <div className="Home">
         <div className={css(styles.header)}>
           <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>Welcome to My World 2</h2>
         </div>
         <p className={css(styles.introText)}>
           To get started, edit <code>src/containers/app/App.js</code> and save to reload.
