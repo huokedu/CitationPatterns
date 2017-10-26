@@ -1,3 +1,21 @@
 .container {
   height: 100%;
 }
+
+
+.Drawer_Container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40%;
+  width: 300px;
+}
+
+.Drawer_Paper {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}

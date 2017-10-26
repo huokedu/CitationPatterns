@@ -6,8 +6,9 @@ import { bindActionCreators } from 'redux';
 import './stylesheets/Dashboard.css';
 
 // NPM Modules
+import Drawer from 'material-ui/Drawer';
 import Paper from 'material-ui/Paper';
-import Grid from 'material-ui/Grid';
+
 
 // Assets
 
@@ -19,14 +20,37 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Grid className="container" container spacing={0}>
-          <Grid item xs={3} sm={3} lg={3}>
-            <Paper>SUCH DRAWER</Paper>
-          </Grid>
-          <Grid item xs={9} sm={9} lg={9}>
-            <Paper>WOW</Paper>
-          </Grid>
-        </Grid>
+        <Drawer
+          type="permanent"
+          anchor={'left'}
+        >
+          <div className="Drawer_Container">
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+            <div className="Drawer_Paper">
+              Hello World
+            </div>
+          </div>
+        </Drawer>
       </div>
     );
   }
