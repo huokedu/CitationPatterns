@@ -1,4 +1,4 @@
-# frontend
+# SPACIAL Frontend
 
 ## build instructions
 

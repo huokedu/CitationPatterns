@@ -9,7 +9,7 @@ import './stylesheets/Home.css';
 import { StyleSheet, css } from 'aphrodite';
 
 // Assets
-import logo from './logo.svg';
+import logo from './resources/logo.svg';
 
 // Actions
 import { ExampleActions } from '../../redux/example';
