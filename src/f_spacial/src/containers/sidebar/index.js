@@ -6,8 +6,6 @@ import { bindActionCreators } from 'redux';
 import './stylesheets/Sidebar.css';
 
 // NPM Modules
-import Drawer from 'material-ui/Drawer';
-
 
 // Components
 import SearchResults from './results';
@@ -22,10 +20,7 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <Drawer
-        type="permanent"
-        anchor={'left'}
-      >
+      <div className="SidebarContainer">
         <div className="Drawer_Container">
           <div className="Drawer_Search">
             <SearchBar />
@@ -34,7 +29,7 @@ class Sidebar extends React.Component {
             <SearchResults results={["Paper1","Paper2","Paper3"]}/>
           </div>
         </div>
-      </Drawer>
+      </div>
     );
   }
 }

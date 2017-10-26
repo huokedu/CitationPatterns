@@ -20,31 +20,33 @@ class SearchResults extends React.Component {
 
   render() {
     return (
-      <List>
-        {this.props.results.map((res, i) => {
-          return (
-            <ListItem button key={i}>
-              <Avatar>
-                <Face/>
-              </Avatar>
-              <ListItemText primary={res} secondary="Jan 9, 2016" />
-            </ListItem>
-            );
-          })
-        }
-        <Divider />
-        {this.props.results.map((res, i) => {
-          return (
-            <ListItem button key={i+this.props.results.length}>
-              <Avatar>
-                <File/>
-              </Avatar>
-              <ListItemText primary={res} secondary="Jan 9, 2016" />
-            </ListItem>
-            );
-          })
-        }
-      </List>
+      <div className="ResultsList">
+        <List>
+          {this.props.results.map((res, i) => {
+            return (
+              <ListItem button key={i}>
+                <Avatar>
+                  <Face/>
+                </Avatar>
+                <ListItemText primary={res} secondary="Jan 9, 2016" />
+              </ListItem>
+              );
+            })
+          }
+          <Divider />
+          {this.props.results.map((res, i) => {
+            return (
+              <ListItem button key={i+this.props.results.length}>
+                <Avatar>
+                  <File/>
+                </Avatar>
+                <ListItemText primary={res} secondary="Jan 9, 2016" />
+              </ListItem>
+              );
+            })
+          }
+        </List>
+      </div>
     );
   }
 }

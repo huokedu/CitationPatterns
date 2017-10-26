@@ -8,7 +8,6 @@ import './stylesheets/Dashboard.css';
 // NPM Modules
 
 // Components
-import Sidebar from '../sidebar';
 
 // Assets
 
@@ -20,7 +19,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="Home">
-         <Sidebar />
+        Wow 
       </div>
     );
   }

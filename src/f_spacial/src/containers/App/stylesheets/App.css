@@ -1,0 +1,14 @@
+.AppFrame {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.NomNomSpace{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.MaxHeight {
+  height: 100%;
+}
