@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 // Stylesheets
 import './stylesheets/Results.css';
@@ -10,6 +9,7 @@ import List, { ListItem, ListItemText } from 'material-ui/List';
 import Avatar from 'material-ui/Avatar';
 import Face from 'material-ui-icons/Face';
 import File from 'material-ui-icons/InsertDriveFile';
+import Divider from 'material-ui/Divider';
 
 
 // Assets
@@ -32,6 +32,7 @@ class SearchResults extends React.Component {
             );
           })
         }
+        <Divider />
         {this.props.results.map((res, i) => {
           return (
             <ListItem button key={i+this.props.results.length}>

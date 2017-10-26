@@ -7,11 +7,11 @@ import './stylesheets/Sidebar.css';
 
 // NPM Modules
 import Drawer from 'material-ui/Drawer';
-import Paper from 'material-ui/Paper';
 
 
 // Components
 import SearchResults from './results';
+import SearchBar from './search';
 
 // Assets
 
@@ -28,10 +28,7 @@ class Sidebar extends React.Component {
       >
         <div className="Drawer_Container">
           <div className="Drawer_Search">
-            <form>
-              <input type="text" />
-              <input type="submit" />
-            </form>
+            <SearchBar />
           </div>
           <div className="Drawer_Results">
             <SearchResults results={["Paper1","Paper2","Paper3"]}/>

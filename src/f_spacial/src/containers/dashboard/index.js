@@ -6,8 +6,6 @@ import { bindActionCreators } from 'redux';
 import './stylesheets/Dashboard.css';
 
 // NPM Modules
-import Drawer from 'material-ui/Drawer';
-import Paper from 'material-ui/Paper';
 
 // Components
 import Sidebar from '../sidebar';
