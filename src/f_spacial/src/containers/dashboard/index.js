@@ -9,6 +9,8 @@ import './stylesheets/Dashboard.css';
 import Drawer from 'material-ui/Drawer';
 import Paper from 'material-ui/Paper';
 
+// Components
+import Sidebar from '../sidebar';
 
 // Assets
 
@@ -20,37 +22,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="Home">
-        <Drawer
-          type="permanent"
-          anchor={'left'}
-        >
-          <div className="Drawer_Container">
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-            <div className="Drawer_Paper">
-              Hello World
-            </div>
-          </div>
-        </Drawer>
+         <Sidebar />
       </div>
     );
   }
