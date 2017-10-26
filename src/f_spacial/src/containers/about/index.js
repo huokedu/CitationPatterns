@@ -19,7 +19,7 @@ class About extends React.Component {
     return (
       <div className="About">
         <div className={css(styles.header)}>
-          <h2>Welcome to My World 2</h2>
+          <h2>Welcome to About</h2>
         </div>
         <p className={css(styles.introText)}>
           To get started, edit <code>src/containers/app/App.js</code> and save to reload.

@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 // Containers
 import Home from '../home/';
 import About from '../about/';
+import Dashboard from '../dashboard/';
 
 export default class  Router extends Component {
 
@@ -14,6 +15,7 @@ export default class  Router extends Component {
       <Switch>
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/dashboard' component={Dashboard} />
       </Switch>
     );
   }

@@ -15,12 +15,13 @@ import logo from './resources/logo.svg';
 import { ExampleActions } from '../../redux/example';
 
 class Home extends React.Component {
+
   render() {
     return (
       <div className="Home">
         <div className={css(styles.header)}>
           <img src={logo} className="Home-logo" alt="logo" />
-          <h2>Welcome to My World 2</h2>
+          <h2>Welcome to Home</h2>
         </div>
         <p className={css(styles.introText)}>
           To get started, edit <code>src/containers/app/App.js</code> and save to reload.
