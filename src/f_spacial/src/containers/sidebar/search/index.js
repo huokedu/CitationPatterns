@@ -9,6 +9,7 @@ import './stylesheets/Search.css';
 import { FormControl } from 'material-ui/Form';
 import Input, { InputLabel } from 'material-ui/Input';
 import Search from 'material-ui-icons/Search';
+import IconButton from 'material-ui/IconButton';
 
 
 // Assets
@@ -40,17 +41,11 @@ class SearchBar extends React.Component {
     return (
       <form className="Search_Form" onSubmit={this.handleSubmit}>
         <FormControl className="Search_Form_Control">
-          <InputLabel htmlFor="query">Query</InputLabel>
           <Input id="query" value={this.state.query} onChange={this.handleChange} />
         </FormControl>
-        <button className="Search_Button" type="submit">
-         <Search
-          style={{
-            width: 28,
-            height: 28,
-          }}
-        />
-        </button>
+        <IconButton color="primary" aria-label="submit" type="submit">
+          <Search />
+        </IconButton>
       </form>
     );
   }
