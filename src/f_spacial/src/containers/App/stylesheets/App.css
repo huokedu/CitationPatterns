@@ -1,14 +1,16 @@
 .AppFrame {
   height: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .NomNomSpace{
   display: flex;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .MaxHeight {
   height: 100%;
+  max-height: calc(100vh - 64px); /* Never gonna break, guaranteed! */ 
+  flex: 1;
+  overflow: auto;
 }
