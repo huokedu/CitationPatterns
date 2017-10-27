@@ -1,7 +1,9 @@
 .SidebarContainer {
   display: flex;
-  flex: 3 1 0;
+  flex: 1 1 auto;
   min-height: 0;
+  height: 100%;
+  background-color: rgba(37,49,55,1);
 }
 
 .Drawer_Container {

@@ -1,2 +1,35 @@
 .ResultsList {
 }
+
+.ResultsList .List {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -40px;
+}
+
+.ResultsList .List li {
+  font-family: 'Roboto', sans-serif;
+  color: #80DEEA;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 7px;
+  margin: 0 15px;
+}
+
+.ListItem_Header {
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+
+.ListItem_Author {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 1.3vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
