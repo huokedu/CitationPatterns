@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
             <SearchBar />
           </div>
           <div className="Drawer_Results">
-            <SearchResults results={["Paper1","Paper2","Paper3"]}/>
+            <SearchResults results={[{name:"Enclosing methods in perturbed nonlinear operator equations", author:"J W. Schmidt, H Schneider"},{name:"On storage media with after effects",author:"H. S. Witsenhausen, A. D. Wyner"},{name:"The Three-Machine No-Wait Flow Shop is NP-Complete", author:"Hans Röck"}]}/>
           </div>
         </div>
       </div>
