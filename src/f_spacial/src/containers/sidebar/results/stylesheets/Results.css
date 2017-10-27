@@ -11,10 +11,8 @@
 
 .ResultsList .List li {
   font-family: 'Roboto', sans-serif;
-  color: rgba(122, 116,126,1);
+  color: rgba(83, 95, 110,1);
   padding: 10px;
-  border: 1px solid rgba(255, 255, 255, .3);
-  border-radius: 7px;
   margin: 10px 15px 0px 15px;
   cursor: pointer;
 }
@@ -30,9 +28,14 @@
   vertical-align: middle;
 }
 
+.ListItem_Title {
+  font-size: 1vw;
+}
+
 .ListItem_Author {
   display: inline-block;
   margin: 0 auto;
+  color: #ffffff;
   font-size: 1.3vw;
   white-space: nowrap;
   overflow: hidden;

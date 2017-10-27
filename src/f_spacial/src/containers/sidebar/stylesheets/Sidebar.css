@@ -3,19 +3,29 @@
   flex: 1 1 auto;
   min-height: 0;
   height: 100%;
-  background-color: rgba(28,26,29,1);
+  background-color: rgba(24,24,24,1);
 }
 
 .Drawer_Container {
   display: flex;
   flex: 1 1 auto;
+  width: 100%;
   flex-direction: column;
   height: 100%;
+}
+
+.Drawer_Header {
+  text-align: center;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  padding: 5px 0px;
 }
 
 .Drawer_Search {
   display: flex;
   flex: 0 1 auto;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .Drawer_Results{
