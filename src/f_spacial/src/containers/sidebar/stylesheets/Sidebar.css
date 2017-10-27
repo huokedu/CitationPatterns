@@ -1,0 +1,35 @@
+.SidebarContainer {
+  display: flex;
+  flex: 3 1 0;
+  min-height: 0;
+}
+
+.Drawer_Container {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  height: 100%;
+}
+
+.Drawer_Search {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.Drawer_Results{
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.Drawer_Paper {
+  flex: 1 1 auto;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.Drawer_Results ol.Drawer_Results_List {
+  list-style-type: none;
+}

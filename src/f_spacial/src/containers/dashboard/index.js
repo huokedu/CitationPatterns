@@ -7,6 +7,8 @@ import './stylesheets/Dashboard.css';
 
 // NPM Modules
 
+// Components
+
 // Assets
 
 // Actions
@@ -17,13 +19,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="Home">
-        <div>
-          <h2>Welcome to Dashboard</h2>
-          <div className="Dashboard_Header">
-          </div>
-          <div className="Dashboard_Query_Bar">
-          </div>
-        </div>
+        Wow 
       </div>
     );
   }
