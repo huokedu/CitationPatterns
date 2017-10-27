@@ -6,11 +6,9 @@ import { bindActionCreators } from 'redux';
 import './stylesheets/Navbar.css';
 
 // NPM Modules
-import AppBar from 'material-ui/AppBar';
-import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 
 // Components
+import SearchBar from '../search';
 
 // Assets
 
@@ -23,13 +21,13 @@ class Navbar extends React.Component {
 
   render() {
     return (
-      <AppBar position="static">
-        <Toolbar>
-          <Typography type="title" color="inherit">
-            SPACIAL
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <div className="Navbar">
+        <div className="NavbarItem Dataset">
+          <SearchBar />
+        </div>
+        <div className="NavbarItem Logo">SPACIAL</div>
+        <div className="NavbarItem Control">ACM</div>
+      </div>
     );
   }
 }

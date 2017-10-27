@@ -9,7 +9,6 @@ import './stylesheets/Sidebar.css';
 
 // Components
 import SearchResults from './results';
-import SearchBar from './search';
 
 // Assets
 
@@ -22,8 +21,8 @@ class Sidebar extends React.Component {
     return (
       <div className="SidebarContainer">
         <div className="Drawer_Container">
-          <div className="Drawer_Search">
-            <SearchBar />
+          <div className="Drawer_Header">
+            Results
           </div>
           <div className="Drawer_Results">
             <SearchResults results={[{name:"Enclosing methods in perturbed nonlinear operator equations", author:"J W. Schmidt, H Schneider"},{name:"On storage media with after effects",author:"H. S. Witsenhausen, A. D. Wyner"},{name:"The Three-Machine No-Wait Flow Shop is NP-Complete", author:"Hans Röck"}]}/>

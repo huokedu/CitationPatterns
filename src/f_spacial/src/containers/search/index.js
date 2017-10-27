@@ -6,10 +6,8 @@ import { connect } from 'react-redux';
 import './stylesheets/Search.css';
 
 // NPM Modules
-import { FormControl } from 'material-ui/Form';
-import Input, { InputLabel } from 'material-ui/Input';
+import Grid from 'material-ui/Grid';
 import Search from 'material-ui-icons/Search';
-import IconButton from 'material-ui/IconButton';
 
 
 // Assets
@@ -39,14 +37,11 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <form className="Search_Form" onSubmit={this.handleSubmit}>
-        <FormControl className="Search_Form_Control">
-          <Input id="query" value={this.state.query} onChange={this.handleChange} />
-        </FormControl>
-        <IconButton color="primary" aria-label="submit" type="submit">
-          <Search />
-        </IconButton>
-      </form>
+      <div className="Search">
+        <form>
+          <input placeholder="Filter!" />
+        </form>
+      </div>
     );
   }
 }
