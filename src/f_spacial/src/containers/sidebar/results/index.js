@@ -45,16 +45,13 @@ class SearchResults extends React.Component {
         <ul className="List">
           {this.props.results.map((res, i) => {
             return (
-              <Grid container direction={'column'} spacing={0}>
+              <Grid key={i} container direction={'column'} spacing={0}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                  <li key={i}>
+                  <li>
                     <Grid container direction={'column'} spacing={0}>
                       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                         <div className="ListItem_Header">
                           <Grid container direction={'row'} spacing={0}>
-                            <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-                              <InsertDriveFile />
-                            </Grid>
                             <Grid item xs={9} sm={9} md={9} lg={9} xl={9}>
                               <div className="ListItem_Author">
                                 {this.displayAuthor(res.author)}
@@ -64,7 +61,9 @@ class SearchResults extends React.Component {
                         </div>
                       </Grid>
                       <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        {this.displayTitle(res.name+res.name)}
+                        <div className="ListItem_Title">
+                          {this.displayTitle(res.name+res.name)}
+                        </div>
                       </Grid>
                     </Grid>
                   </li>
