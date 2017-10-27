@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 // Stylesheets
 import './stylesheets/Navbar.css';
@@ -15,10 +14,6 @@ import SearchBar from '../search';
 // Actions
 
 class Navbar extends React.Component {
-  constructor(props){
-    super(props);
-  }
-
   render() {
     return (
       <div className="Navbar">

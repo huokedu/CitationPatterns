@@ -6,9 +6,6 @@ import { connect } from 'react-redux';
 import './stylesheets/Search.css';
 
 // NPM Modules
-import Grid from 'material-ui/Grid';
-import Search from 'material-ui-icons/Search';
-
 
 // Assets
 

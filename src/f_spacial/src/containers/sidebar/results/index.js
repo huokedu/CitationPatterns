@@ -6,7 +6,6 @@ import './stylesheets/Results.css';
 
 // NPM Modules
 import Grid from 'material-ui/Grid';
-import InsertDriveFile from 'material-ui-icons/InsertDriveFile';
 
 // Assets
 

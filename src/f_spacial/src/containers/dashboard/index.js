@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div className="Home">
-        Wow 
+        Wow
       </div>
     );
   }

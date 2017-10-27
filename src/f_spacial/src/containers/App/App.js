@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 // NPM Modules
 import { withRouter } from 'react-router';
 import Grid from 'material-ui/Grid';
-import Paper from 'material-ui/Paper';
 
 //Components
 import Sidebar from '../sidebar';
