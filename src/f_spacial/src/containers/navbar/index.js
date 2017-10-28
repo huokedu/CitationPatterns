@@ -42,7 +42,7 @@ class Navbar extends React.Component {
         <div className="header_item logo">
           <a>Spacial</a>
         </div>
-        <div className="header_item">
+        <div className="header_item select_db">
           <Dropdown list={DB} selected={DB[0]} handleSelect={this.handleSelectDB}/>
         </div>
       </div>
