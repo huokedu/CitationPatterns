@@ -6,6 +6,8 @@ import './stylesheets/Results.css';
 
 // NPM Modules
 import Grid from 'material-ui/Grid';
+import Avatar from 'material-ui/Avatar';
+import AssignmentIcon from 'material-ui-icons/Assignment';
 
 // Assets
 
@@ -47,22 +49,31 @@ class SearchResults extends React.Component {
               <Grid key={i} container direction={'column'} spacing={0}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                   <li>
-                    <Grid container direction={'column'} spacing={0}>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <div className="ListItem_Header">
-                          <Grid container direction={'row'} spacing={0}>
-                            <Grid item xs={9} sm={9} md={9} lg={9} xl={9}>
-                              <div className="ListItem_Author">
-                                {this.displayAuthor(res.author)}
-                              </div>
-                            </Grid>
-                          </Grid>
-                        </div>
+                    <Grid container direction={'row'} spacing={4}>
+                      <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
+                        <Avatar>
+                          <AssignmentIcon />
+                        </Avatar>
                       </Grid>
-                      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                        <div className="ListItem_Title">
-                          {this.displayTitle(res.name+res.name)}
-                        </div>
+                      <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
+                        <Grid container direction={'column'} spacing={0}>
+                          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <div className="ListItem_Header">
+                              <Grid container direction={'row'} spacing={0}>
+                                <Grid item xs={9} sm={9} md={9} lg={9} xl={9}>
+                                  <div className="ListItem_Author">
+                                    {this.displayAuthor(res.author)}
+                                  </div>
+                                </Grid>
+                              </Grid>
+                            </div>
+                          </Grid>
+                          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+                            <div className="ListItem_Title">
+                              {this.displayTitle(res.name+res.name)}
+                            </div>
+                          </Grid>
+                        </Grid>
                       </Grid>
                     </Grid>
                   </li>
