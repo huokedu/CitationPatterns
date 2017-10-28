@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import './stylesheets/Navbar.css';
 
 // NPM Modules
-import Grid from 'material-ui/Grid';
 
 // Components
 import SearchBar from '../search';
