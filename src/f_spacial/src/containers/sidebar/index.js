@@ -12,7 +12,7 @@ import './stylesheets/Sidebar.css';
 // Assets
 
 // Actions
-import { ExampleActions } from '../../redux/example';
+import { WidgetActions, WidgetNames } from '../../redux/widgets';
 
 class Sidebar extends React.Component {
 
@@ -21,12 +21,14 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <div className="sidebar_body">
           <ul className="sidebar_menu">
-            <li className="sidebar_menu_item current">
-              Overview
-            </li>
-            <li className="sidebar_menu_item">
-              Patterns
-            </li>
+            { WidgetNames.map((name, index) => {
+                return (
+                  <li key={index} className={"sidebar_menu_item" + (this.props.widgets[name] ? ' current' : '')} onClick={() => this.props.widgetActions.toggle({type:name})}>
+                    {name}
+                  </li>
+                );
+              })
+            }
           </ul>
         </div>
       </div>
@@ -35,11 +37,12 @@ class Sidebar extends React.Component {
 }
 
 const mapStateToProps = state => ({
+  widgets: state.widgets,
   routing: state.routing,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  exampleActions: bindActionCreators(ExampleActions, dispatch),
+  widgetActions: bindActionCreators(WidgetActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);
