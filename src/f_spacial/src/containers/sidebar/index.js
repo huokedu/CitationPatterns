@@ -8,7 +8,6 @@ import './stylesheets/Sidebar.css';
 // NPM Modules
 
 // Components
-import SearchResults from './results';
 
 // Assets
 

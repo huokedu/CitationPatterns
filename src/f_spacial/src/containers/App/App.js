@@ -7,12 +7,10 @@ import React, { Component } from 'react';
 
 // NPM Modules
 import { withRouter } from 'react-router';
-import Grid from 'material-ui/Grid';
 
 //Components
 import Sidebar from '../sidebar';
 import Navbar from '../navbar';
-import Dashboard from '../dashboard';
 
 // Assets
 import './stylesheets/App.css';
@@ -41,6 +39,9 @@ class App extends Component {
         <div id="container">
           <Sidebar />
           <div className="content">
+            <ScrollToTop>
+              <Router />
+            </ScrollToTop>
           </div>
         </div>
       </div>
