@@ -6,8 +6,7 @@ import './stylesheets/Results.css';
 
 // NPM Modules
 import Grid from 'material-ui/Grid';
-import Avatar from 'material-ui/Avatar';
-import AssignmentIcon from 'material-ui-icons/Assignment';
+import Icon from 'material-ui/Icon';
 
 // Assets
 
@@ -49,11 +48,11 @@ class SearchResults extends React.Component {
               <Grid key={i} container direction={'column'} spacing={0}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
                   <li>
-                    <Grid container direction={'row'} spacing={4}>
-                      <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
-                        <Avatar>
-                          <AssignmentIcon />
-                        </Avatar>
+                    <Grid container direction={'row'} spacing={8}>
+                      <Grid className="ListItem_Icon" item xs={2} sm={2} md={2} lg={2} xl={2}>
+                        <Icon color="contrast" style={{ fontSize: '3vw', marginTop: '30%' }}>
+                          assignment
+                        </Icon>
                       </Grid>
                       <Grid item xs={10} sm={10} md={10} lg={10} xl={10}>
                         <Grid container direction={'column'} spacing={0}>
