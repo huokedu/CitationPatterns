@@ -8,6 +8,7 @@ div.dropdown-container {
   display: block;
   width: 250px;
   margin-top: 20px;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 div.dropdown-container.show > div.dropdown-list {
   transform: scale(1, 1);
@@ -42,6 +43,7 @@ div.dropdown-container > div.dropdown-display > span {
   -moz-box-sizing: border-box;
   padding-right: 34px;
   padding-left: 10px;
+  font-weight: bold;
 }
 div.dropdown-container > div.dropdown-display > i {
   position: relative;
@@ -110,6 +112,7 @@ div.dropdown-container > div.dropdown-list > div > div > span {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   color: inherit;
+  font-weight: bold;
 }
 div.dropdown-container > div.dropdown-list > div > div > i {
   float: left;
