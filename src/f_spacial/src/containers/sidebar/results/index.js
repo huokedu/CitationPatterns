@@ -42,7 +42,7 @@ class SearchResults extends React.Component {
     return (
       <div className="ResultsList">
         <ul className="List">
-          {this.props.results.map((res, i) => {
+          {this.props.results.slice(0, 5).map((res, i) => {
             return (
               <Grid key={i} container direction={'column'} spacing={0}>
                 <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
@@ -72,6 +72,9 @@ class SearchResults extends React.Component {
             })
           }
         </ul>
+        <div className="List_ViewAll">
+          View all
+        </div>
       </div>
     );
   }

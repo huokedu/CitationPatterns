@@ -41,3 +41,10 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.List_ViewAll {
+  float: right;
+  margin-right: 30px;
+  color: rgba(7,125,229,1);
+  cursor: pointer;
+}
