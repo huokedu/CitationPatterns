@@ -8,12 +8,31 @@ import './stylesheets/Navbar.css';
 
 // Components
 import SearchBar from '../search';
+import Dropdown from '../dropdown';
 
 // Assets
 
 // Actions
 
+var DB =[
+  {
+    name: "ACM"
+  },
+  {
+    name: "DBLP"
+  }
+]
+
 class Navbar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleSelectDB = this.handleSelectDB.bind(this);
+  }
+
+  handleSelectDB(item){
+    console.log(item);
+  }
+
   render() {
     return (
       <div id="header">
@@ -24,7 +43,7 @@ class Navbar extends React.Component {
           <a>Spacial</a>
         </div>
         <div className="header_item">
-          ACM
+          <Dropdown list={DB} selected={DB[0]} handleSelect={this.handleSelectDB}/>
         </div>
       </div>
     );
