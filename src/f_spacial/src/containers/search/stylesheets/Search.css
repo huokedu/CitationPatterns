@@ -14,6 +14,7 @@
 }
 
 .Search form input {
+  height: 40px;
   padding: 8px 10px;
   color: #551a8b;
   font-size: 14px;
