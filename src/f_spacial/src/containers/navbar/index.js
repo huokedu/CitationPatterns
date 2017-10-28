@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import './stylesheets/Navbar.css';
 
 // NPM Modules
+import Grid from 'material-ui/Grid';
 
 // Components
 import SearchBar from '../search';
@@ -17,11 +18,17 @@ class Navbar extends React.Component {
   render() {
     return (
       <div className="Navbar">
-        <div className="NavbarItem Dataset">
-          <SearchBar />
-        </div>
-        <div className="NavbarItem Logo">SPACIAL</div>
-        <div className="NavbarItem Control">ACM</div>
+        <Grid container direction={'row'} spacing={0}>
+          <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
+              <SearchBar />
+          </Grid>
+          <Grid className="NavbarItem Logo" item xs={6} sm={6} md={6} lg={6} xl={6}>
+              SPACIAL
+          </Grid>
+          <Grid className="NavbarItem Control" item xs={3} sm={3} md={3} lg={3} xl={3}>
+              ACM
+          </Grid>
+        </Grid>
       </div>
     );
   }

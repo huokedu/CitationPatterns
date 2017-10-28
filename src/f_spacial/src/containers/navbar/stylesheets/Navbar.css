@@ -2,7 +2,7 @@
   position: static;
   top: 0;
   height: 64px;
-  background-color: rgba(24,24,24,1);
+  background-color: rgba(50,56,74,1);
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -12,18 +12,19 @@
 }
 
 .NavbarItem.Dataset {
-  flex: 1;
 }
 
 .NavbarItem.Logo {
-  flex: 1;
   text-align: center;
+  height: 100%;
+  line-height: 64px;
 }
 
 .NavbarItem.Control {
-  flex: 1;
   text-align: right;
-  height: 64px;
+  height: 100%;
+  line-height: 64px;
+  padding-right: 50px;
 }
 
 .pull-left {
