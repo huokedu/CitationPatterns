@@ -19,13 +19,16 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className="SidebarContainer">
-        <div className="Drawer_Container">
-          <div className="Drawer_Header">
-            Results
-          </div>
-          <div className="Drawer_Results">
-          </div>
+      <div className="sidebar">
+        <div className="sidebar_body">
+          <ul className="sidebar_menu">
+            <li className="sidebar_menu_item current">
+              Overview
+            </li>
+            <li className="sidebar_menu_item">
+              Patterns
+            </li>
+          </ul>
         </div>
       </div>
     );

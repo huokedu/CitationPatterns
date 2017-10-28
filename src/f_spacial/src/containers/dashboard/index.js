@@ -19,9 +19,7 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className="Home">
-        <WorldMap />
-      </div>
+      <WorldMap />
     );
   }
 }

@@ -12,6 +12,7 @@ import Grid from 'material-ui/Grid';
 //Components
 import Sidebar from '../sidebar';
 import Navbar from '../navbar';
+import Dashboard from '../dashboard';
 
 // Assets
 import './stylesheets/App.css';
@@ -35,28 +36,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="AppFrame">
-        <Grid container direction={'column'} spacing={0}>
-          <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-            <Navbar />
-          </Grid>
-          <div className="NomNomSpace">
-            <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-              <Grid className="MaxHeight" container direction={'row'} spacing={0}>
-                <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-                  <Sidebar />
-                </Grid>
-                <Grid item xs={9} sm={9} md={9} lg={9} xl={9}>
-                  <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-                    <ScrollToTop>
-                      <Router />
-                    </ScrollToTop>
-                  </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
+      <div id="app_frame">
+        <Navbar />
+        <div id="container">
+          <Sidebar />
+          <div className="content">
           </div>
-        </Grid>
+        </div>
       </div>
     );
   }

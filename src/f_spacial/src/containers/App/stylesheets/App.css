@@ -1,18 +1,19 @@
-.AppFrame {
+div#app_frame {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  background-image: url('../resources/bg.png');
 }
 
-.NomNomSpace{
-  display: flex;
-  flex: 0 0 auto;
-}
-
-.MaxHeight {
-  height: 100%;
-  min-height: calc(100vh - 64px); /* Never gonna break, guaranteed! */
-  max-height: calc(100vh - 64px); /* Never gonna break, guaranteed! */
+div#container {
+  width: 100%;
+  margin: 0 auto;
   flex: 1;
-  overflow: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+div#container div.content {
+  flex: 1;
 }

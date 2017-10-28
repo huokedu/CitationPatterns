@@ -1,5 +1,10 @@
 .Search {
   width: 100%;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 24px;
+  min-width: 200px;
+  max-width: 300px;
 }
 
 .Search form{
@@ -9,13 +14,23 @@
 }
 
 .Search form input {
-  width: 100%;
-  height: 64px;
-  color: #ffffff;
-  line-height: 20px;
-  font-size: 20px;
-  background-color: rgba(38,43,58,1);
-  border: none;
+  padding: 8px 10px;
+  color: #551a8b;
+  font-size: 14px;
+  border-top-color: rgb(204, 204, 204);
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-right-color: rgb(204, 204, 204);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-bottom-color: rgb(204, 204, 204);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-left-color: rgb(204, 204, 204);
+  border-left-style: solid;
+  border-left-width: 1px;
+  background-color: #fff;
   outline: none;
-  padding: 0px 20px;
+  width: 100%;
+  font-weight: bold;
 }

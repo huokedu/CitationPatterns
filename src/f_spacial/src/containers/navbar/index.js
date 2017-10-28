@@ -17,18 +17,16 @@ import SearchBar from '../search';
 class Navbar extends React.Component {
   render() {
     return (
-      <div className="Navbar">
-        <Grid container direction={'row'} spacing={0}>
-          <Grid item xs={3} sm={3} md={3} lg={3} xl={3}>
-              <SearchBar />
-          </Grid>
-          <Grid className="NavbarItem Logo" item xs={6} sm={6} md={6} lg={6} xl={6}>
-              SPACIAL
-          </Grid>
-          <Grid className="NavbarItem Control" item xs={3} sm={3} md={3} lg={3} xl={3}>
-              ACM
-          </Grid>
-        </Grid>
+      <div id="header">
+        <div className="header_item header_search">
+          <SearchBar />
+        </div>
+        <div className="header_item logo">
+          <a>Spacial</a>
+        </div>
+        <div className="header_item">
+          ACM
+        </div>
       </div>
     );
   }
