@@ -7,8 +7,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { widgetReducer } from './widgets';
+import { queryReducer } from './query';
 
 export default combineReducers({
   routing: routerReducer,
-  widgets: widgetReducer
+  widgets: widgetReducer,
+  query: queryReducer,
 });

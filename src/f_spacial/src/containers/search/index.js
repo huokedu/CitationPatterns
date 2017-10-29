@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-//import { bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 
 // Stylesheets
 import './stylesheets/Search.css';
@@ -10,6 +10,7 @@ import './stylesheets/Search.css';
 // Assets
 
 // Actions
+import { QueryActions } from '../../redux/query';
 
 class SearchBar extends React.Component {
   constructor(props){
@@ -22,21 +23,22 @@ class SearchBar extends React.Component {
   }
 
   handleChange(event){
-    console.log(event.target.value);
     this.setState({ query: event.target.value });
   }
 
-  handleSubmit(event){
-    event.preventDefault();
-    console.log(this.state.query);
-    // API CALL
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.queryActions.query(this.state.query);
+    this.setState({
+      query: "",
+    });
   }
 
   render() {
     return (
       <div className="Search">
-        <form>
-          <input placeholder="Filter!" />
+        <form onSubmit={this.handleSubmit}>
+          <input placeholder="Filter!" value={this.state.query} onChange={this.handleChange}/>
         </form>
       </div>
     );
@@ -45,10 +47,11 @@ class SearchBar extends React.Component {
 
 const mapStateToProps = state => ({
   routing: state.routing,
+  query: state.query,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  //exampleActions: bindActionCreators(ExampleActions, dispatch),
+  queryActions: bindActionCreators(QueryActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

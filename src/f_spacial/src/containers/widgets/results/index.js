@@ -4,9 +4,12 @@
  */
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 
 // NPM Modules
-import { withRouter } from 'react-router';
+
 
 //Components
 import ResultRow from './resultRow';
@@ -14,13 +17,16 @@ import ResultRow from './resultRow';
 // Assets
 import './stylesheets/Results.css';
 
+// Actions
+import { QueryActions } from '../../../redux/query';
+
 class Results extends Component {
   render() {
     return (
       <div className="card full_widget results">
         <div className="card_container">
           <div className="card_header">
-            Results for query:
+            {'Results for query: ' +  this.props.query.query}
           </div>
           <div className="results_container">
             <div className="results_column not_selected">
@@ -78,4 +84,14 @@ class Results extends Component {
   }
 }
 
-export default withRouter(Results);
+const mapStateToProps = state => ({
+  query: state.query,
+  routing: state.routing,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  queryActions: bindActionCreators(QueryActions, dispatch),
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Results);
