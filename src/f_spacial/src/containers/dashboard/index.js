@@ -19,7 +19,14 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <WorldMap />
+      <div id="dashboard_container">
+        <div className="card text">
+          <p>This site teaches the CSS fundamentals that are used in any website's layout.</p>
+        </div>
+        <div className="card graph">
+          <WorldMap />
+        </div>
+      </div>
     );
   }
 }

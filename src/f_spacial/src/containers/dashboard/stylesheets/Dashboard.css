@@ -17,3 +17,44 @@ path.countries {
   stroke: #75739F;
   fill: #5EAFC6;
 }
+
+
+#dashboard_container {
+  padding: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  flex: 1;
+  width: 100%;
+  min-height: 100%;
+}
+
+#dashboard_container .card {
+  margin: 20px;
+  /*background: #f7f7f7;*/
+  box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.75);
+  /*border-bottom: 5px solid #ddd;*/
+  border-radius: 10px;
+}
+
+.card.text {
+  max-width: 300px;
+  line-height: 24px !important;
+  font-size: 13px !important;
+  padding: 48px 24px 106px 48px !important;
+  background: url('../resources/lined-paper.png') no-repeat left top !important;
+}
+.card.text p {
+  display: block;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+}
+
+.card.graph {
+  background: #f7f7f7;
+  padding: 20px;
+  width: 100%;
+}
