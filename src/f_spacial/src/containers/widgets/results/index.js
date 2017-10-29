@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 
 //Components
+import ResultRow from './resultRow';
 
 // Assets
 import './stylesheets/Results.css';
@@ -33,21 +34,21 @@ class Results extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs</td>
-                    <td>Maria Anders</td>
-                    <td className="table_action"><i className="fa fa-arrow-right" aria-hidden="true"></i></td>
-                  </tr>
-                  <tr>
-                    <td>On storage media with after effects</td>
-                    <td>H. S. Witsenhausen, A. D. Wyner</td>
-                    <td className="table_action"><i className="fa fa-arrow-right" aria-hidden="true"></i></td>
-                  </tr>
+                  <ResultRow
+                    queried
+                    paper_title={'A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs'}
+                    paper_author={'Maria Anders'}
+                  />
+                  <ResultRow
+                    queried
+                    paper_title={'On storage media with after effects'}
+                    paper_author={'H. S. Witsenhausen, A. D. Wyner'}
+                  />
                 </tbody>
               </table>
             </div>
             <div className="results_column selected">
-              <div className="results_column_header">Queried</div>
+              <div className="results_column_header">Selected</div>
               <table>
                 <thead>
                   <tr>
@@ -57,16 +58,16 @@ class Results extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td className="table_action"><i className="fa fa-arrow-left" aria-hidden="true"></i></td>
-                    <td>A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs</td>
-                    <td>Maria Anders</td>
-                  </tr>
-                  <tr>
-                    <td className="table_action"><i className="fa fa-arrow-left" aria-hidden="true"></i></td>
-                    <td>On storage media with after effects</td>
-                    <td>H. S. Witsenhausen, A. D. Wyner</td>
-                  </tr>
+                  <ResultRow
+                    selected
+                    paper_title={'A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs'}
+                    paper_author={'Maria Anders'}
+                  />
+                  <ResultRow
+                    selected
+                    paper_title={'On storage media with after effects'}
+                    paper_author={'H. S. Witsenhausen, A. D. Wyner'}
+                  />
                 </tbody>
               </table>
             </div>
