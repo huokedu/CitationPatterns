@@ -70,6 +70,15 @@ path.countries {
   height: 45px;
   font-family: 'Roboto Condensed', sans-serif;
   line-height: 45px;
-  font-size: 24px;
+  font-size: 20px;
   border: 1px solid #dddddd;
+  display: flex;
+}
+
+.card_header span {
+  font-weight: bold;
+  color: #551a8b;
+  flex: 1;
+  padding-left: 35px;
+  font-size: 24px;
 }

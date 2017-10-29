@@ -26,7 +26,10 @@ class Results extends Component {
       <div className="card full_widget results">
         <div className="card_container">
           <div className="card_header">
-            {'Results for query: ' +  this.props.query.query}
+            {'Results for query: '}
+            <span>
+              {this.props.query.query}
+            </span>
           </div>
           <div className="results_container">
             <div className="results_column not_selected">

@@ -22,9 +22,6 @@ class Dashboard extends React.Component {
     return (
       <div id="dashboard_container">
         <Results />
-        <div className="card text">
-          <p>Testing text widget.</p>
-        </div>
         <div className="card full_widget graph">
           <WorldMap />
         </div>
