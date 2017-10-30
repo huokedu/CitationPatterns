@@ -6,6 +6,8 @@ go get github.com/dnk0/CitationPatterns/src/crawl
 
 # CitationPatterns
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/7ec4610ed40408d5c8ac/maintainability)](https://codeclimate.com/github/dnk0/CitationPatterns/maintainability)
+
 ## Modul
 
 [Wissens- und Contentmanagement (10-202-2323)](http://asv.informatik.uni-leipzig.de/moduls/1)
