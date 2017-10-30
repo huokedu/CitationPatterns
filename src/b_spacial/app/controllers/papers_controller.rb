@@ -3,12 +3,16 @@ class PapersController < ApplicationController
   # GET /papers
   # GET /papers.json
   def index
-    if !params[:query].empty?
-      @papers = Paper
-      .query_as(:p).where("p.title CONTAINS '"+params[:query]+"'")
-      .limit(50)
-      .pluck(:p)
-      render json: @papers
+    if params[:query]
+      if !params[:query].empty?
+        @papers = Paper.query_as(:p).where("p.title CONTAINS '"+params[:query]+"'")
+        .limit(50)
+        .pluck(:p)
+        render json: @papers
+      else
+        @papers = Paper.all.limit(10)
+        render json: @papers
+      end
     else
       @papers = Paper.all.limit(10)
       render json: @papers
