@@ -10,6 +10,7 @@ import './stylesheets/Dashboard.css';
 // Components
 import WorldMap from './map/WorldMap';
 import Results from '../widgets/results';
+import Errors from '../widgets/errors';
 
 // Assets
 
@@ -19,15 +20,18 @@ import { ExampleActions } from '../../redux/example';
 class Dashboard extends React.Component {
 
   render() {
+    /* TODO: Beautify the widgets rendering process */
     return (
       <div id="dashboard_container">
         { this.props.widgets.widgets.sort(function(x, y){
                 return y.created_at - x.created_at;
               }).map((widget, index)=> {
-            if(widget.type === 'RESULTS'){
+            if (widget.type === 'RESULTS'){
               return <Results key={index} data={widget.data} query={widget.query}/>
-            }else {
-              return 'WOW';
+            } else if (widget.type === 'ERROR') {
+              return <Errors key={index} data={widget.data} query={widget.query}/>;
+            } else {
+              return '';
             }
         })}
       </div>
