@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 
 module BSpacial
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.orm             :neo4j
     end
@@ -35,6 +35,7 @@ module BSpacial
     # config.neo4j.session.type = :embedded
     # config.neo4j.session.path = Rails.root.join('neo4j-db').to_s
 
+    config.api_only = true
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
