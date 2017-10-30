@@ -10,13 +10,13 @@
 const WidgetConstants = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
-  TOGGLE: 'TOGGLE'
 }
 
-export const WidgetNames = [
-  'RESULTS',
-  'MAP',
-]
+export const WidgetNames = {
+  RESULTS: 'RESULTS',
+  MAP: 'MAP',
+  ERROR: 'ERROR'
+}
 
 export const WidgetActions = {
   toggle: (widget) => {
@@ -31,7 +31,11 @@ export const WidgetActions = {
     return dispatch => {
       dispatch({
         type: WidgetConstants.ADD,
-        widget: widget,
+        widget: {
+          type: widget.type,
+          data: widget.data,
+          created_at: new Date()
+        }
       })
     }
   },
@@ -50,26 +54,24 @@ export const WidgetActions = {
  **********************************/
 
 const defaultWidgetState = {
-  RESULTS: false,
-  MAP: false,
-  GRAPH: false,
+  widgets: []
 }
 
 export const widgetReducer = (state = defaultWidgetState, action) => {
   switch(action.type) {
-    case WidgetConstants.TOGGLE:
-      switch(action.widget.type){
-        case 'RESULTS':
+    case WidgetConstants.ADD:
+      switch(action.widget.type) {
+        case WidgetNames.RESULTS: {
+          /* TODO: use object.assign() */
+          let newWidgets = state.widgets;
+          newWidgets.push(action.widget);
           return Object.assign({}, state, {
-            RESULTS: !state.RESULTS
-          })
-        case 'MAP':
-        return Object.assign({}, state, {
-          MAP: !state.MAP
-        })
+            widgets: newWidgets
+          });
+        }
         default:
           return state;
-      }
+    }
     default:
       return state;
   }
