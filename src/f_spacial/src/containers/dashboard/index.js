@@ -21,10 +21,15 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div id="dashboard_container">
-        <Results />
-        <div className="card full_widget graph">
-          <WorldMap />
-        </div>
+        { this.props.widgets.widgets.sort(function(x, y){
+                return y.created_at - x.created_at;
+              }).map((widget, index)=> {
+            if(widget.type === 'RESULTS'){
+              return <Results key={index} data={widget.data} query={widget.query}/>
+            }else {
+              return 'WOW';
+            }
+        })}
       </div>
     );
   }
@@ -32,6 +37,7 @@ class Dashboard extends React.Component {
 
 const mapStateToProps = state => ({
   routing: state.routing,
+  widgets: state.widgets
 })
 
 const mapDispatchToProps = (dispatch) => ({

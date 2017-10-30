@@ -12,13 +12,13 @@ import { bindActionCreators } from 'redux';
 
 
 //Components
-import ResultRow from './resultRow';
+import ResultsTable from './resultsTable';
+import Loading from './loading';
 
 // Assets
 import './stylesheets/Results.css';
 
 // Actions
-import { QueryActions } from '../../../redux/query';
 
 class Results extends Component {
   render() {
@@ -28,58 +28,19 @@ class Results extends Component {
           <div className="card_header">
             {'Results for query: '}
             <span>
-              {this.props.query.query}
+              {this.props.query}
             </span>
           </div>
           <div className="results_container">
             <div className="results_column not_selected">
               <div className="results_column_header">Queried</div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Title</th>
-                    <th>Authors</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ResultRow
-                    queried
-                    paper_title={'A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs'}
-                    paper_author={'Maria Anders'}
-                  />
-                  <ResultRow
-                    queried
-                    paper_title={'On storage media with after effects'}
-                    paper_author={'H. S. Witsenhausen, A. D. Wyner'}
-                  />
-                </tbody>
-              </table>
-            </div>
-            <div className="results_column selected">
-              <div className="results_column_header">Selected</div>
-              <table>
-                <thead>
-                  <tr>
-                    <th></th>
-                    <th>Title</th>
-                    <th>Authors</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <ResultRow
-                    selected
-                    paper_title={'A necessary and sufficient condition in order that a Herbrand interpretation be expressive relative to recursive programs'}
-                    paper_author={'Maria Anders'}
-                  />
-                  <ResultRow
-                    selected
-                    paper_title={'On storage media with after effects'}
-                    paper_author={'H. S. Witsenhausen, A. D. Wyner'}
-                  />
-                </tbody>
-              </table>
-            </div>
+                { this.props.query.isFetching ?
+                        <Loading />
+
+                  :
+                    <ResultsTable data={this.props.data}/>
+                }
+              </div>
           </div>
         </div>
       </div>
@@ -88,12 +49,10 @@ class Results extends Component {
 }
 
 const mapStateToProps = state => ({
-  query: state.query,
   routing: state.routing,
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  queryActions: bindActionCreators(QueryActions, dispatch),
 });
 
 

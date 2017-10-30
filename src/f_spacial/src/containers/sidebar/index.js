@@ -12,7 +12,7 @@ import './stylesheets/Sidebar.css';
 // Assets
 
 // Actions
-import { WidgetActions, WidgetNames } from '../../redux/widgets';
+import { WidgetActions } from '../../redux/widgets';
 
 class Sidebar extends React.Component {
 
@@ -21,14 +21,9 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <div className="sidebar_body">
           <ul className="sidebar_menu">
-            { WidgetNames.map((name, index) => {
-                return (
-                  <li key={index} className={"sidebar_menu_item" + (this.props.widgets[name] ? ' current' : '')} onClick={() => this.props.widgetActions.toggle({type:name})}>
-                    {name}
-                  </li>
-                );
-              })
-            }
+            <li className="sidebar_menu_item">
+              MAP
+            </li>
           </ul>
         </div>
       </div>

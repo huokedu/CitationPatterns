@@ -47,3 +47,10 @@ tr:nth-child(even) {
 .table_action {
   cursor: pointer;
 }
+
+.loader {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #dddddd;
+}
