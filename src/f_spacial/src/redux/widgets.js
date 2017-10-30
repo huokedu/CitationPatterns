@@ -60,18 +60,11 @@ const defaultWidgetState = {
 export const widgetReducer = (state = defaultWidgetState, action) => {
   switch(action.type) {
     case WidgetConstants.ADD:
-      switch(action.widget.type) {
-        case WidgetNames.RESULTS: {
-          /* TODO: use object.assign() */
-          let newWidgets = state.widgets;
-          newWidgets.push(action.widget);
-          return Object.assign({}, state, {
-            widgets: newWidgets
-          });
-        }
-        default:
-          return state;
-    }
+    let newWidgets = state.widgets;
+    newWidgets.push(action.widget);
+    return Object.assign({}, state, {
+      widgets: newWidgets
+    });
     default:
       return state;
   }
