@@ -1,6 +1,6 @@
 div#container div.sidebar {
   width: 18%;
-  min-width: 200px;
+  min-width: 100px;
   max-width: 250px;
 }
 
