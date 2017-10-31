@@ -1,7 +1,7 @@
 div#container div.sidebar {
   width: 18%;
-  min-width: 100px;
-  max-width: 250px;
+  min-width: 50px;
+  max-width: 100px;
 }
 
 div.sidebar div.sidebar_header {
@@ -14,8 +14,7 @@ div.sidebar_body ul.sidebar_menu {
   margin: 0;
   padding: 0;
   margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 24px;
+  margin-right: 10px;
   max-width: 175px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
@@ -29,6 +28,8 @@ div.sidebar_body ul.sidebar_menu li.sidebar_menu_item {
   padding: 8px 10px;
   color: #551a8b;
   font-size: 14px;
+  width: auto;
+  border-radius: 25px;
   border-top-color: rgb(204, 204, 204);
   border-top-style: solid;
   border-top-width: 1px;

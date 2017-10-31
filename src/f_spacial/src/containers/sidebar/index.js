@@ -22,7 +22,7 @@ class Sidebar extends React.Component {
         <div className="sidebar_body">
           <ul className="sidebar_menu">
             <li className="sidebar_menu_item">
-              MAP
+              <i className="fa fa-globe" aria-hidden="true"></i>
             </li>
           </ul>
         </div>

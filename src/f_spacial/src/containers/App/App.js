@@ -37,12 +37,12 @@ class App extends Component {
       <div id="app_frame">
         <Navbar />
         <div id="container">
-          <Sidebar />
           <div className="content">
             <ScrollToTop>
               <Router />
             </ScrollToTop>
           </div>
+          <Sidebar />
         </div>
       </div>
     );
