@@ -22,13 +22,22 @@ class Sidebar extends React.Component {
         <div className="sidebar_body">
           <ul className="sidebar_menu">
             <li className="sidebar_menu_item">
-              <i className="fa fa-globe" aria-hidden="true"></i>
+              <i className="fa fa-comments" aria-hidden="true"></i>
+            </li>
+            <li className="sidebar_menu_item">
+              <i className="fa fa-list" aria-hidden="true"></i>
             </li>
             <li className="sidebar_menu_item">
               <i className="fa fa-globe" aria-hidden="true"></i>
             </li>
             <li className="sidebar_menu_item">
-              <i className="fa fa-globe" aria-hidden="true"></i>
+              <i className="fa fa-eye" aria-hidden="true"></i>
+            </li>
+            <li className="sidebar_menu_item">
+              <i className="fa fa-connectdevelop" aria-hidden="true"></i>
+            </li>
+            <li className="sidebar_menu_item">
+              <i className="fa fa-history" aria-hidden="true"></i>
             </li>
           </ul>
         </div>

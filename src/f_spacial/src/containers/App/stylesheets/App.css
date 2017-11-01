@@ -1,7 +1,6 @@
 div#app_frame {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
   flex: 1;
   background-color: rgba(248, 249, 251, 1);
