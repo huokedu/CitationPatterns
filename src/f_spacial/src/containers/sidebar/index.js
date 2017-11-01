@@ -24,6 +24,12 @@ class Sidebar extends React.Component {
             <li className="sidebar_menu_item">
               <i className="fa fa-globe" aria-hidden="true"></i>
             </li>
+            <li className="sidebar_menu_item">
+              <i className="fa fa-globe" aria-hidden="true"></i>
+            </li>
+            <li className="sidebar_menu_item">
+              <i className="fa fa-globe" aria-hidden="true"></i>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,7 +1,5 @@
 div#container div.sidebar {
-  width: 18%;
-  min-width: 50px;
-  max-width: 100px;
+  width: 50px;
 }
 
 div.sidebar div.sidebar_header {
@@ -13,9 +11,6 @@ div.sidebar_body ul.sidebar_menu {
   list-style-image: none;
   margin: 0;
   padding: 0;
-  margin-top: 20px;
-  margin-right: 10px;
-  max-width: 175px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bold;
 }
@@ -25,25 +20,14 @@ div.sidebar_body ul.sidebar_menu:first-child {
 }
 
 div.sidebar_body ul.sidebar_menu li.sidebar_menu_item {
-  padding: 8px 10px;
   color: #551a8b;
   font-size: 14px;
   width: auto;
-  border-radius: 25px;
-  border-top-color: rgb(204, 204, 204);
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-right-color: rgb(204, 204, 204);
-  border-right-style: solid;
-  border-right-width: 1px;
-  border-bottom-color: rgb(204, 204, 204);
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-left-color: rgb(204, 204, 204);
-  border-left-style: solid;
-  border-left-width: 1px;
-  background-color: #fff;
+  height: 50px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .current {
