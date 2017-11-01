@@ -1,5 +1,6 @@
 div#container div.sidebar {
   width: 50px;
+  background-color: #ffffff;
 }
 
 div.sidebar div.sidebar_header {
@@ -20,14 +21,18 @@ div.sidebar_body ul.sidebar_menu:first-child {
 }
 
 div.sidebar_body ul.sidebar_menu li.sidebar_menu_item {
-  color: #551a8b;
-  font-size: 14px;
+  color: rgba(18, 54, 84, 1);
+  font-size: 18px;
   width: auto;
   height: 50px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+div.sidebar_body ul.sidebar_menu li.sidebar_menu_item:hover {
+  color: #fff;
+  background-color: rgba(242, 74, 62, 1);
 }
 
 .current {
