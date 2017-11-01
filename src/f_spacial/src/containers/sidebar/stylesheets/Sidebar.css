@@ -1,6 +1,8 @@
 div#container div.sidebar {
-  width: 50px;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 50px;
 }
 
 div.sidebar div.sidebar_header {
