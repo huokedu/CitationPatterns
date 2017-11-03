@@ -49,11 +49,11 @@ export const QueryActions = {
               }
             });
           }
-          dispatch({
-            type: QueryConstants.QUERY_FINISH,
-            results: json
-          });
+        dispatch({
+          type: QueryConstants.QUERY_FINISH,
+          results: json
         });
+      });
     }
   },
 }

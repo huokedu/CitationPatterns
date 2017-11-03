@@ -1,9 +1,9 @@
 div#app_frame {
   display: flex;
   flex-direction: column;
-  height: 100%;
   width: 100%;
-  background-image: url('../resources/bg.png');
+  flex: 1;
+  background-color: rgba(248, 249, 251, 1);
 }
 
 div#container {
