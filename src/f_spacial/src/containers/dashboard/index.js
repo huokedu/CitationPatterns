@@ -9,8 +9,7 @@ import './stylesheets/Dashboard.css';
 
 // Components
 import WorldMap from './map/WorldMap';
-import Results from '../widgets/results';
-import Errors from '../widgets/errors';
+import Widget from '../widgets';
 
 // Assets
 
@@ -26,13 +25,7 @@ class Dashboard extends React.Component {
         { this.props.widgets.widgets.sort(function(x, y){
                 return y.created_at - x.created_at;
               }).map((widget, index)=> {
-            if (widget.type === 'RESULTS'){
-              return <Results key={index} data={widget.data} query={widget.query}/>
-            } else if (widget.type === 'ERROR') {
-              return <Errors key={index} data={widget.data} query={widget.query}/>;
-            } else {
-              return '';
-            }
+            return <Widget key={index} widget={widget} index={index}/>
         })}
       </div>
     );

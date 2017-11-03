@@ -34,12 +34,7 @@ class Results extends Component {
           <div className="results_container">
             <div className="results_column not_selected">
               <div className="results_column_header">Queried</div>
-                { this.props.query.isFetching ?
-                        <Loading />
-
-                  :
-                    <ResultsTable data={this.props.data}/>
-                }
+                <ResultsTable data={this.props.data}/>
               </div>
           </div>
         </div>
