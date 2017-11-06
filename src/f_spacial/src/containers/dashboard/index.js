@@ -8,7 +8,6 @@ import './stylesheets/Dashboard.css';
 // NPM Modules
 
 // Components
-import WorldMap from './map/WorldMap';
 import Widget from '../widgets';
 
 // Assets

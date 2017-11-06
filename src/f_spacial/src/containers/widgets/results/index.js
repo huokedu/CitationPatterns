@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 
 // NPM Modules
@@ -13,7 +12,6 @@ import { bindActionCreators } from 'redux';
 
 //Components
 import ResultsTable from './resultsTable';
-import Loading from './loading';
 
 // Assets
 import './stylesheets/Results.css';
