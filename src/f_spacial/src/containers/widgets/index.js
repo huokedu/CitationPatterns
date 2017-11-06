@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-
 
 // NPM Modules
 
@@ -9,6 +6,7 @@ import { bindActionCreators } from 'redux';
 //Components
 import Errors from './errors';
 import Results from './results';
+import ShowPaper from './show_paper';
 
 
 // Constants
@@ -40,6 +38,9 @@ export default class Widget extends Component {
     let type = this.props.widget.type;
     let widgetToRender = null;
     switch(type) {
+        case WidgetTypeNames.SHOW_PAPER:
+          widgetToRender = <ShowPaper expanded={this.state.expanded} data={this.props.widget.data}/>;
+          break;
         case WidgetTypeNames.RESULTS:
           widgetToRender = <Results expanded={this.state.expanded} query={this.props.widget.query} data={this.props.widget.data}/>;
           break;

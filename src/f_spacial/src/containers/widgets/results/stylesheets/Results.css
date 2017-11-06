@@ -56,3 +56,7 @@ tr:nth-child(even) {
   padding: 20px;
   border: 1px solid #dddddd;
 }
+
+.results_row {
+  cursor: pointer;
+}
