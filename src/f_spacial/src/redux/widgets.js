@@ -6,7 +6,6 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
-import WidgetTypeNames from '../constants/widgets';
 
 export const WidgetActionNames = {
   ADD: 'ADD',
@@ -19,7 +18,7 @@ export const WidgetActions = {
   add: (widget) => {
     return dispatch => {
       dispatch({
-        type: WidgetTypeNames.ADD,
+        type: WidgetActionNames.ADD,
         widget: {
           type: widget.type,
           data: widget.data,
@@ -31,7 +30,7 @@ export const WidgetActions = {
   remove: (widget) => {
     return dispatch => {
       dispatch({
-        type: WidgetTypeNames.REMOVE,
+        type: WidgetActionNames.REMOVE,
         widget: widget
       })
     }
@@ -39,7 +38,7 @@ export const WidgetActions = {
   update: (widget, queryTimestamp) => {
     return dispatch => {
       dispatch({
-        type: WidgetTypeNames.UPDATE,
+        type: WidgetActionNames.UPDATE,
         widget: widget,
         queryTimestamp: queryTimestamp
       })
