@@ -51,6 +51,13 @@
   font-size: 24px;
 }
 
+.card_footer {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 5px 0;
+  cursor: pointer;
+}
+
 .pending_body {
   text-align: center;
 }

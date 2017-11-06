@@ -23,21 +23,20 @@ import './stylesheets/Results.css';
 class Results extends Component {
   render() {
     return (
-      <div className="card full_widget results">
-        <div className="card_container">
-          <div className="card_header">
-            {'Results for query: '}
-            <span>
-              {this.props.query}
-            </span>
-          </div>
-          <div className="results_container">
-            <div className="results_column not_selected">
-              <div className="results_column_header">Queried</div>
-                <ResultsTable data={this.props.data}/>
-              </div>
-          </div>
+      <div>
+        <div className="card_header">
+          {'Results for query: '}
+          <span>
+            {this.props.query}
+          </span>
         </div>
+        {this.props.expanded && <div className="results_container">
+          <div className="results_column not_selected">
+            <div className="results_column_header">Queried</div>
+              <ResultsTable data={this.props.data}/>
+            </div>
+        </div>
+        }
       </div>
     );
   }
