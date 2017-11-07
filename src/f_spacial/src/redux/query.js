@@ -6,7 +6,8 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
-import { WidgetNames } from './widgets';
+import WidgetTypeNames from '../constants/widgets';
+import { WidgetActionNames } from './widgets';
 
 const QueryConstants = {
   QUERY: 'QUERY',
@@ -24,29 +25,37 @@ export const QueryActions = {
       dispatch({
         type: QueryConstants.QUERY_BEGIN
       });
+      let queryTimeIdentifier = new Date();
+      dispatch({
+        type: WidgetActionNames.ADD,
+        widget: {
+          type: WidgetTypeNames.PENDING,
+          created_at: queryTimeIdentifier
+        }
+      })
       fetch(`http://localhost:3000/papers?query=${string}`)
       .then(response => response.json())
       .then(json =>
-        {
+          {
           if(json.error) {
             dispatch({
-              type: 'ADD',
+              type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetNames.ERROR,
-                data: json,
-                query: string,
+                type: WidgetTypeNames.ERROR,
+                data: Object.assign({}, {result:json}, {query:string}),
                 created_at: new Date()
-              }
+              },
+              queryTimestamp: queryTimeIdentifier
             });
           }else {
             dispatch({
-              type: 'ADD',
+              type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetNames.RESULTS,
-                data: json,
-                query: string,
+                type: WidgetTypeNames.RESULTS,
+                data: Object.assign({}, {result:json}, {query:string}),
                 created_at: new Date()
-              }
+              },
+              queryTimestamp: queryTimeIdentifier
             });
           }
         dispatch({

@@ -18,17 +18,14 @@ import './stylesheets/Errors.css';
 class Errors extends Component {
   render() {
     return (
-      <div className="card full_widget errors">
-        <div className="card_container">
-          <div className="card_header">
-            {'Errors for query: '}
-            <span>
-              {this.props.query}
-            </span>
-          </div>
-          <h1>{this.props.data.error}</h1>
-          <h2>{this.props.data.status}</h2>
-        </div>
+      <div>
+        {
+          this.props.expanded &&
+            <div>
+              <h1>{this.props.data.error}</h1>
+              <h2>{this.props.data.status}</h2>
+            </div>
+        }
       </div>
     );
   }

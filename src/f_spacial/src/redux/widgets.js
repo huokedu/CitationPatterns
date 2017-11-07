@@ -7,30 +7,18 @@
  *        ACTIONS SECTION         *
  **********************************/
 
-const WidgetConstants = {
+export const WidgetActionNames = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
+  UPDATE: 'UPDATE'
 }
 
-export const WidgetNames = {
-  RESULTS: 'RESULTS',
-  MAP: 'MAP',
-  ERROR: 'ERROR'
-}
 
 export const WidgetActions = {
-  toggle: (widget) => {
-    return dispatch => {
-      dispatch({
-        type: WidgetConstants.TOGGLE,
-        widget: widget,
-      })
-    }
-  },
   add: (widget) => {
     return dispatch => {
       dispatch({
-        type: WidgetConstants.ADD,
+        type: WidgetActionNames.ADD,
         widget: {
           type: widget.type,
           data: widget.data,
@@ -42,8 +30,17 @@ export const WidgetActions = {
   remove: (widget) => {
     return dispatch => {
       dispatch({
-        type: WidgetConstants.REMOVE,
+        type: WidgetActionNames.REMOVE,
         widget: widget
+      })
+    }
+  },
+  update: (widget, queryTimestamp) => {
+    return dispatch => {
+      dispatch({
+        type: WidgetActionNames.UPDATE,
+        widget: widget,
+        queryTimestamp: queryTimestamp
       })
     }
   }
@@ -58,13 +55,18 @@ const defaultWidgetState = {
 }
 
 export const widgetReducer = (state = defaultWidgetState, action) => {
+  let newWidgets = state.widgets;
   switch(action.type) {
-    case WidgetConstants.ADD:
-    let newWidgets = state.widgets;
-    newWidgets.push(action.widget);
-    return Object.assign({}, state, {
-      widgets: newWidgets
-    });
+    case WidgetActionNames.ADD:
+      newWidgets.push(action.widget);
+      return Object.assign({}, state, {
+        widgets: newWidgets
+      });
+    case WidgetActionNames.UPDATE:
+      newWidgets[newWidgets.indexOf(newWidgets.find(x => x.created_at === action.queryTimestamp))] = action.widget;
+      return Object.assign({}, state, {
+        widgets: newWidgets
+      });
     default:
       return state;
   }
