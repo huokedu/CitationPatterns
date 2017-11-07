@@ -2,7 +2,7 @@ div#container div.sidebar {
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  width: 50px;
+  width: 3%;
 }
 
 div.sidebar div.sidebar_header {
@@ -24,9 +24,9 @@ div.sidebar_body ul.sidebar_menu:first-child {
 
 div.sidebar_body ul.sidebar_menu li.sidebar_menu_item {
   color: rgba(18, 54, 84, 1);
-  font-size: 18px;
+  font-size: 1.5vh;
   width: auto;
-  height: 50px;
+  height: 3vw;
   cursor: pointer;
   display: flex;
   align-items: center;
