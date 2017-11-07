@@ -58,7 +58,6 @@ export const widgetReducer = (state = defaultWidgetState, action) => {
   let newWidgets = state.widgets;
   switch(action.type) {
     case WidgetActionNames.ADD:
-      console.log(action);
       newWidgets.push(action.widget);
       return Object.assign({}, state, {
         widgets: newWidgets
