@@ -20,7 +20,7 @@ path.countries {
 
 
 #dashboard_container {
-  padding: 20px;
+  padding: 5px 6.5vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
