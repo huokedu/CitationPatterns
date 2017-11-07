@@ -1,19 +1,24 @@
 # README
 
-## Dependency Installation
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-```bash
-bundle
-```
+Things you may want to cover:
 
-## Starting a development server 
+* Ruby version
 
-```bash
-rails s
-```
+* System dependencies
 
-## Migrating the database
+* Configuration
 
-```bash
-rake db:migrate
-```
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
