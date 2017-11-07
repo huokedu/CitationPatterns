@@ -42,10 +42,10 @@ export default class Widget extends Component {
           widgetToRender = <ShowPaper expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
         case WidgetTypeNames.RESULTS:
-          widgetToRender = <Results expanded={this.state.expanded} query={this.props.widget.query} data={this.props.widget.data}/>;
+          widgetToRender = <Results expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
         case WidgetTypeNames.ERROR:
-          widgetToRender = <Errors expanded={this.state.expanded} query={this.props.widget.query} data={this.props.widget.data}/>;
+          widgetToRender = <Errors expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
         case WidgetTypeNames.PENDING:
           widgetToRender =
@@ -58,22 +58,34 @@ export default class Widget extends Component {
           widgetToRender = <div>Nothing to see</div>
           break;
     }
+
     return (
       <div className="card full_widget results">
         <div className="card_container">
-          {widgetToRender}
-          <div
-            className="card_footer"
-            onClick={this.toggleExpand}
-          >
-            { this.state.expanded ?
-              <i className="fa fa-angle-double-up" aria-hidden="true"></i>
-              :
-              <i className="fa fa-angle-double-down" aria-hidden="true"></i>
-            }
+          <div className="card_header">
+            {this.props.widget.type}
+            <span>
+              { this.props.widget.query}
+              { this.props.widget.data ? this.props.widget.data.paper_title : ''}
+            </span>
+            <div className="card_controls">
+              { this.state.expanded ?
+                <i
+                  className="fa fa-compress" aria-hidden="true"
+                  onClick={this.toggleExpand}
+                ></i>
+                :
+                <i
+                  className="fa fa-expand" aria-hidden="true"
+                  onClick={this.toggleExpand}
+                ></i>
+              }
+              <i className="fa fa-times" aria-hidden="true"></i>
+            </div>
           </div>
+          {widgetToRender}
         </div>
       </div>
-        );
+    );
   }
 }

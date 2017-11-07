@@ -19,14 +19,8 @@ class Errors extends Component {
   render() {
     return (
       <div>
-        <div className="card_header">
-          {'Errors for query: '}
-          <span>
-            {this.props.query}
-          </span>
-        </div>
         {
-          this.props.expanded && 
+          this.props.expanded &&
             <div>
               <h1>{this.props.data.error}</h1>
               <h2>{this.props.data.status}</h2>
