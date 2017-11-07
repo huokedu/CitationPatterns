@@ -65,7 +65,7 @@ export default class Widget extends Component {
           <div className="card_header">
             {this.props.widget.type}
             <span>
-              { this.props.widget.query}
+              { this.props.widget.data ? this.props.widget.data.query : ''}
               { this.props.widget.data ? this.props.widget.data.paper_title : ''}
             </span>
             <div className="card_controls">
