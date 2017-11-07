@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
         { this.props.widgets.widgets.sort(function(x, y){
                 return y.created_at - x.created_at;
               }).map((widget, index)=> {
-            return <Widget key={index} widget={widget} index={index}/>
+            return <Widget key={widget.created_at} widget={widget} index={index}/>
         })}
       </div>
     );
