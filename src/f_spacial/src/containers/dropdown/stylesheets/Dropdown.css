@@ -148,7 +148,7 @@ div.dropdown-container > div.dropdown-list > div > div.selected > i {
   background-color: rgba(31, 70, 98, 0.8);
   color: #fff;
   border-radius: 6px;
-  padding: 10px;
+  padding: 10px 30px;
 }
 
 .tooltip .tooltiptext::after {
