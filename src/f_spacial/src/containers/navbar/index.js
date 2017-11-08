@@ -17,15 +17,31 @@ import Dropdown from '../dropdown';
 var DB =[
   {
     name: "dblp",
-    component: <span>DBLP</span>
+    component: <span>DBLP</span>,
+    stats: {
+      nodes: 2384099,
+      edges: 10394521
+    }
   },
   {
     name: "citeseerx",
-    component: <span>CiteSeer<span style={{verticalAlign: '4px', fontSize : '80%'}}>X</span></span>
+    component: <span>CiteSeer<span style={{verticalAlign: '4px', fontSize : '80%'}}>X</span></span>,
+    stats: {
+      nodes: 2118122,
+      selected: 1286659,
+      edges: 10595956
+    }
   },
   {
     name: "ann",
-    component: <span>ANN</span>
+    component: <span>ANN</span>,
+    stats: {
+      nodes: 19918,
+      edges: 124812,
+      diameter: 21,
+      average_degree: 12.53,
+      largest_connected_component_size: 19712,
+    }
   }
 ]
 

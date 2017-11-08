@@ -40,9 +40,11 @@ class Dropdown extends React.Component {
 		var items = [];
 		for (var i = 0; i < this.props.list.length; i++) {
 			var item = this.props.list[i];
-			items.push(<div key={i} onClick={this.select.bind(null, item)}>
+			items.push(<div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
 				{item.component}
-				<i className="fa fa-check"></i>
+        <div className="tooltiptext">
+          <pre>{JSON.stringify(item.stats, null, 2)}</pre>
+        </div>
 			</div>);
 		}
 		return items;
