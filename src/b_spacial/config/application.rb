@@ -19,7 +19,7 @@ Bundler.require(*Rails.groups)
 
 module BSpacial
   class Application < Rails::Application
-    
+
     config.generators do |g|
       g.orm             :neo4j
     end
@@ -47,5 +47,13 @@ module BSpacial
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # CORS
+    config.middleware.insert_before 0, Rack::Cors do
+      allow do
+        origins 'localhost:8080'
+        resource '*', :headers => :any, :methods => [:get, :post, :options]
+      end
+    end
   end
 end
