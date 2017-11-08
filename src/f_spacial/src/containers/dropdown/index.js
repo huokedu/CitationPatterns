@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 // Stylesheets
 import './stylesheets/Dropdown.css';
+import './stylesheets/Tooltip.css';
 
 // NPM Modules
 
