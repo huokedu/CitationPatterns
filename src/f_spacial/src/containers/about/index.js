@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 // Stylesheets
 import './stylesheets/About.css';
@@ -12,7 +10,6 @@ import { StyleSheet, css } from 'aphrodite';
 //import logo from './logo.svg';
 
 // Actions
-import { ExampleActions } from '../../redux/example';
 
 class About extends React.Component {
   render() {
@@ -29,14 +26,6 @@ class About extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  routing: state.routing,
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  exampleActions: bindActionCreators(ExampleActions, dispatch),
-});
-
 var styles = StyleSheet.create({
   header: {
     backgroundColor: '#222',
@@ -49,4 +38,4 @@ var styles = StyleSheet.create({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(About)
+export default About;
