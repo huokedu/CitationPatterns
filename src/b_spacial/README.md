@@ -8,7 +8,7 @@ bundle
 
 ## Dev server start
 ```bash
-rails s
+rails s -p 16198
 ```
 
 ## Migrate
