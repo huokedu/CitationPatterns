@@ -24,7 +24,7 @@ export default class Widget extends Component {
     super(props);
     this.state = {
       type : WidgetTypeNames.PENDING,
-      expanded: false,
+      expanded: true,
     };
     this.toggleExpand = this.toggleExpand.bind(this);
   }
