@@ -16,20 +16,32 @@ import Dropdown from '../dropdown';
 
 var DB =[
   {
-    name: "ACM"
+    name: "dblp",
+    component: <span>DBLP</span>
   },
   {
-    name: "DBLP"
+    name: "citeseerx",
+    component: <span>CiteSeer<span style={{verticalAlign: '4px', fontSize : '80%'}}>X</span></span>
+  },
+  {
+    name: "ann",
+    component: <span>ANN</span>
   }
 ]
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.state={
+      selected: DB[0]
+    };
     this.handleSelectDB = this.handleSelectDB.bind(this);
   }
 
   handleSelectDB(item){
+    this.setState({
+      selected: item
+    });
     console.log(item);
   }
 
@@ -43,7 +55,7 @@ class Navbar extends React.Component {
           <a>Spacial</a>
         </div>
         <div className="header_item select_db">
-          <Dropdown list={DB} selected={DB[0]} handleSelect={this.handleSelectDB}/>
+          <Dropdown list={DB} selected={this.state.selected} handleSelect={this.handleSelectDB}/>
         </div>
       </div>
     );

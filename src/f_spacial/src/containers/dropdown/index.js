@@ -41,7 +41,7 @@ class Dropdown extends React.Component {
 		for (var i = 0; i < this.props.list.length; i++) {
 			var item = this.props.list[i];
 			items.push(<div key={i} onClick={this.select.bind(null, item)}>
-				<span>{item.name}</span>
+				{item.component}
 				<i className="fa fa-check"></i>
 			</div>);
 		}
@@ -55,9 +55,7 @@ class Dropdown extends React.Component {
           className={"dropdown-display" + (this.state.listVisible ? " clicked": "")}
           onClick={this.handleClick}
         >
-          <span>
-            {this.props.selected.name}
-          </span>
+          {this.props.selected.component}
           <i className="fa fa-angle-down">
           </i>
         </div>
