@@ -32,7 +32,8 @@ export const WidgetActions = {
     return dispatch => {
       dispatch({
         type: WidgetActionNames.REMOVE,
-        widget: widget
+        widget: widget,
+        queryTimestamp: widget.created_at
       })
     }
   },
@@ -69,6 +70,11 @@ export const widgetReducer = (state = defaultWidgetState, action) => {
     case WidgetActionNames.UPDATE:
       newWidget = Object.assign({}, newWidget, { header_type: WidgetTypeDescriptions[newWidget.type] });
       newWidgets[newWidgets.indexOf(newWidgets.find(x => x.created_at === action.queryTimestamp))] = newWidget;
+      return Object.assign({}, state, {
+        widgets: newWidgets
+      });
+    case WidgetActionNames.REMOVE:
+      newWidgets.splice(newWidgets.indexOf(newWidgets.find(x => x.created_at === action.queryTimestamp)),1);
       return Object.assign({}, state, {
         widgets: newWidgets
       });
