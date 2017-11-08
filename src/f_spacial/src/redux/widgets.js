@@ -6,6 +6,7 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
+import { WidgetTypeDescriptions } from '../constants/widgets';
 
 export const WidgetActionNames = {
   ADD: 'ADD',
@@ -56,14 +57,18 @@ const defaultWidgetState = {
 
 export const widgetReducer = (state = defaultWidgetState, action) => {
   let newWidgets = state.widgets;
+  let newWidget = action.widget;
   switch(action.type) {
     case WidgetActionNames.ADD:
-      newWidgets.push(action.widget);
+      newWidget = Object.assign({}, newWidget, { header_type: WidgetTypeDescriptions[newWidget.type] });
+      console.log(newWidget);
+      newWidgets.push(newWidget);
       return Object.assign({}, state, {
         widgets: newWidgets
       });
     case WidgetActionNames.UPDATE:
-      newWidgets[newWidgets.indexOf(newWidgets.find(x => x.created_at === action.queryTimestamp))] = action.widget;
+      newWidget = Object.assign({}, newWidget, { header_type: WidgetTypeDescriptions[newWidget.type] });
+      newWidgets[newWidgets.indexOf(newWidgets.find(x => x.created_at === action.queryTimestamp))] = newWidget;
       return Object.assign({}, state, {
         widgets: newWidgets
       });

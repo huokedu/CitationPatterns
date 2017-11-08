@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // NPM Modules
 
-//Components
+// Components
 
 // Assets
 

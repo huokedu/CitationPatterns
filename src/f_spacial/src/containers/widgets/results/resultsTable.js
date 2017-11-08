@@ -29,8 +29,7 @@ class ResultsTable extends Component {
               <ResultRow
                 key={i}
                 queried
-                paper_title={result.paper.title}
-                paper_author={result.paper.author}
+                data={result}
               />
             );
             }))

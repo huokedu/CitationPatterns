@@ -16,11 +16,11 @@ const QueryConstants = {
 }
 
 export const QueryActions = {
-  query: (string) => {
+  query: (queryString) => {
     return dispatch => {
       dispatch({
         type: QueryConstants.QUERY,
-        query: string,
+        query: queryString,
       })
       dispatch({
         type: QueryConstants.QUERY_BEGIN
@@ -30,10 +30,13 @@ export const QueryActions = {
         type: WidgetActionNames.ADD,
         widget: {
           type: WidgetTypeNames.PENDING,
+          data: {
+                  query: queryString
+          },
           created_at: queryTimeIdentifier
         }
       })
-      fetch(`http://localhost:16198/query?title=${string}`)
+      fetch(`http://localhost:16198/query?title=${queryString}`)
       .then(response => response.json())
       .then(json =>
           {
@@ -42,7 +45,7 @@ export const QueryActions = {
               type: WidgetActionNames.UPDATE,
               widget: {
                 type: WidgetTypeNames.ERROR,
-                data: Object.assign({}, {result:json}, {query:string}),
+                data: Object.assign({}, {result: json}, {query: queryString}),
                 created_at: new Date()
               },
               queryTimestamp: queryTimeIdentifier
@@ -52,7 +55,7 @@ export const QueryActions = {
               type: WidgetActionNames.UPDATE,
               widget: {
                 type: WidgetTypeNames.RESULTS,
-                data: Object.assign({}, {result:json}, {query:string}),
+                data: Object.assign({}, {result: json}, {query: queryString}),
                 created_at: new Date()
               },
               queryTimestamp: queryTimeIdentifier

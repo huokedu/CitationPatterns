@@ -8,6 +8,7 @@ import Errors from './errors';
 import Results from './results';
 import ShowPaper from './show_paper';
 import Pending from './pending';
+import WidgetHeader from './widget_header';
 
 
 // Constants
@@ -59,27 +60,11 @@ export default class Widget extends Component {
     return (
       <div className="card full_widget results">
         <div className="card_container">
-          <div className="card_header">
-            {this.props.widget.type}
-            <span>
-              { this.props.widget.data ? this.props.widget.data.query : ''}
-              { this.props.widget.data ? this.props.widget.data.paper_title : ''}
-            </span>
-            <div className="card_controls">
-              { this.state.expanded ?
-                <i
-                  className="fa fa-compress" aria-hidden="true"
-                  onClick={this.toggleExpand}
-                ></i>
-                :
-                <i
-                  className="fa fa-expand" aria-hidden="true"
-                  onClick={this.toggleExpand}
-                ></i>
-              }
-              <i className="fa fa-times" aria-hidden="true"></i>
-            </div>
-          </div>
+          <WidgetHeader
+            widget={this.props.widget}
+            expanded={this.state.expanded}
+            toggleExpand={this.toggleExpand}
+          />
           {widgetToRender}
         </div>
       </div>

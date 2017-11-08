@@ -20,12 +20,12 @@ class ResultRow extends Component {
           onClick={() => {
             this.props.widgetsActions.add({
               type: 'SHOW_PAPER',
-              data: this.props
+              data: this.props.data
             });
           }}
         >
-          <td>{this.props.paper_title}</td>
-          <td>{this.props.paper_author}</td>
+          <td>{this.props.data.paper.title}</td>
+          <td>{this.props.data.paper.author}</td>
         </tr>
       );
   }

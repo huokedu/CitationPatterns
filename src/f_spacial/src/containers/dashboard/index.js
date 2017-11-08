@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 // Stylesheets
 import './stylesheets/Dashboard.css';
@@ -13,7 +12,6 @@ import Widget from '../widgets';
 // Assets
 
 // Actions
-import { ExampleActions } from '../../redux/example';
 
 class Dashboard extends React.Component {
 
@@ -37,7 +35,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  exampleActions: bindActionCreators(ExampleActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
