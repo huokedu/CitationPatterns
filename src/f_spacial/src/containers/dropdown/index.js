@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 // Stylesheets
 import './stylesheets/Dropdown.css';
+import './stylesheets/Tooltip.css';
 
 // NPM Modules
 
@@ -40,9 +41,11 @@ class Dropdown extends React.Component {
 		var items = [];
 		for (var i = 0; i < this.props.list.length; i++) {
 			var item = this.props.list[i];
-			items.push(<div key={i} onClick={this.select.bind(null, item)}>
-				<span>{item.name}</span>
-				<i className="fa fa-check"></i>
+			items.push(<div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
+				{item.component}
+        <div className="tooltiptext">
+          <pre>{JSON.stringify(item.stats, null, 2)}</pre>
+        </div>
 			</div>);
 		}
 		return items;
@@ -55,9 +58,7 @@ class Dropdown extends React.Component {
           className={"dropdown-display" + (this.state.listVisible ? " clicked": "")}
           onClick={this.handleClick}
         >
-          <span>
-            {this.props.selected.name}
-          </span>
+          {this.props.selected.component}
           <i className="fa fa-angle-down">
           </i>
         </div>

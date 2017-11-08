@@ -6,43 +6,33 @@ class PapersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get papers_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_paper_url
+    get papers_url, as: :json
     assert_response :success
   end
 
   test "should create paper" do
     assert_difference('Paper.count') do
-      post papers_url, params: { paper: { abstract: @paper.abstract, author: @paper.author, title: @paper.title, year: @paper.year } }
+      post papers_url, params: { paper: { abstract: @paper.abstract, content: @paper.content, published: @paper.published, title: @paper.title } }, as: :json
     end
 
-    assert_redirected_to paper_url(Paper.last)
+    assert_response 201
   end
 
   test "should show paper" do
-    get paper_url(@paper)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_paper_url(@paper)
+    get paper_url(@paper), as: :json
     assert_response :success
   end
 
   test "should update paper" do
-    patch paper_url(@paper), params: { paper: { abstract: @paper.abstract, author: @paper.author, title: @paper.title, year: @paper.year } }
-    assert_redirected_to paper_url(@paper)
+    patch paper_url(@paper), params: { paper: { abstract: @paper.abstract, content: @paper.content, published: @paper.published, title: @paper.title } }, as: :json
+    assert_response 200
   end
 
   test "should destroy paper" do
     assert_difference('Paper.count', -1) do
-      delete paper_url(@paper)
+      delete paper_url(@paper), as: :json
     end
 
-    assert_redirected_to papers_url
+    assert_response 204
   end
 end

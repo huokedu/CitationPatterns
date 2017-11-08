@@ -33,7 +33,7 @@ export const QueryActions = {
           created_at: queryTimeIdentifier
         }
       })
-      fetch(`http://localhost:3000/papers?query=${string}`)
+      fetch(`http://localhost:16198/query?title=${string}`)
       .then(response => response.json())
       .then(json =>
           {

@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  author: MyString
-  abstract: MyString
-  year: MyString
+  abstract: MyText
+  content: MyText
+  published: 1
 
 two:
   title: MyString
-  author: MyString
-  abstract: MyString
-  year: MyString
+  abstract: MyText
+  content: MyText
+  published: 1

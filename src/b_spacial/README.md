@@ -1,19 +1,17 @@
-# README
+# Backend
 
-## Dependency Installation
 
+## Dev install
 ```bash
 bundle
 ```
 
-## Starting a development server 
-
+## Dev server start
 ```bash
-rails s
+rails s -p 16198
 ```
 
-## Migrating the database
-
+## Migrate
 ```bash
-rake db:migrate
+rails neo4j:migrate
 ```
