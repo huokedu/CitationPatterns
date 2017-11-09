@@ -46,7 +46,7 @@ export const QueryActions = {
               widget: {
                 type: WidgetTypeNames.ERROR,
                 data: Object.assign({}, {result: json}, {query: queryString}),
-                created_at: new Date()
+                created_at: queryTimeIdentifier
               },
               queryTimestamp: queryTimeIdentifier
             });
@@ -56,7 +56,7 @@ export const QueryActions = {
               widget: {
                 type: WidgetTypeNames.RESULTS,
                 data: Object.assign({}, {result: json}, {query: queryString}),
-                created_at: new Date()
+                created_at: queryTimeIdentifier
               },
               queryTimestamp: queryTimeIdentifier
             });
