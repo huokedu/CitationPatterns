@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 // NPM Modules
 
-
 //Components
 import Errors from './errors';
 import Results from './results';
@@ -58,7 +57,7 @@ export default class Widget extends Component {
     }
 
     return (
-      <div className="card full_widget results">
+      <div style={this.props.style} className="card full_widget results">
         <div className="card_container">
           <WidgetHeader
             widget={this.props.widget}

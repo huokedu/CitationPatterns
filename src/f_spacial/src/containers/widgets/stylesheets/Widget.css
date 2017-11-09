@@ -1,9 +1,9 @@
 .card {
-  margin: 20px;
   padding: 10px 17px;
   background: #fff;
   border: 1px solid #E6E9ED;
   transition: all .2s ease;
+  width: 100%;
 }
 
 .card.text {
