@@ -19,7 +19,7 @@ class Dashboard extends React.Component {
   getDefaultStyles = () => {
     return this.props.widgets.widgets.sort(function(x, y){
                 return y.created_at - x.created_at;
-              }).map(widget => ({data: widget, key: widget.created_at.toString(), style: {height: 0, opacity: 1}}));
+              }).map(widget => ({data: widget, key: widget.created_at.toString(), style: {maxHeight: 0, opacity: 1}}));
   };
 
   getStyles = () => {
@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
           data: widget,
           key: widget.created_at.toString(),
           style: {
-            height: spring(350, presets.gentle),
+            maxHeight: spring(1000, presets.gentle),
             opacity: spring(1, presets.wobbly),
           }
         };
@@ -40,14 +40,14 @@ class Dashboard extends React.Component {
 
   willEnter() {
     return {
-      height: 0,
+      maxHeight: 0,
       opacity: 1,
     };
   };
 
   willLeave() {
     return {
-      height: spring(0),
+      maxHeight: spring(0),
       opacity: spring(0),
     };
   };
