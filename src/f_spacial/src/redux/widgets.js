@@ -37,11 +37,10 @@ export const WidgetActions = {
       })
     }
   },
-  update: (widget, queryTimestamp) => {
+  update: (queryTimestamp) => {
     return dispatch => {
       dispatch({
         type: WidgetActionNames.UPDATE,
-        widget: widget,
         queryTimestamp: queryTimestamp
       })
     }
