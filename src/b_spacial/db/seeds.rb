@@ -71,3 +71,21 @@ File.foreach('../data/ANN/paper_author_affiliations.txt').with_index do |line, l
   count += 1
   puts "processed paper-author-relationships: " + count.to_s
 end
+
+# uncomment if you want to parse paper-paper-relationships
+count = 0
+File.foreach('../data/ANN/networks/paper_citation_network.txt').with_index do |line, line_num|
+  begin
+    if !line.empty?
+      list_line = line.split(/==>/)
+      selected_papers_out = papers_created.select { |paper| list_line[0].include? paper[:id]}
+      selected_papers_in = papers_created.select { |paper|  list_line[1].include? paper[:id]}
+      paper_out = Paper.find(selected_papers_out[0][:uuid])
+      paper_in = Paper.find(selected_papers_in[0][:uuid])
+      paper_out.references_out  << paper_in
+    end
+  rescue => ex
+  end
+  count += 1
+  puts "processed paper-paper-relationships: " + count.to_s
+end
