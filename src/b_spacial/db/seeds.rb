@@ -48,3 +48,26 @@ File.foreach('../data/ANN/author_ids.txt').with_index do |line, line_num|
   count += 1
   puts "processed authors: " + count.to_s
 end
+
+# uncomment if you want to parse author-paper-relationships
+count = 0
+File.foreach('../data/ANN/paper_author_affiliations.txt').with_index do |line, line_num|
+  begin
+    if !line.empty?
+      list_line = line.split(/\t/)
+      if list_line[0] && !list_line[0].empty? && list_line[1] && !list_line[1].empty?
+        selected_papers = papers_created.select { |paper| paper[:id].include? list_line[0]}
+        selected_authors = authors_created.select { |author| author[:id].include? list_line[1]}
+        if !selected_papers.empty? && !selected_authors.empty?
+          first_paper = Paper.find(selected_papers[0][:uuid])
+          first_author = Author.find(selected_authors[0][:uuid])
+          first_author.papers  << first_paper
+          puts "---"
+        end
+      end
+    end
+  rescue => ex
+  end
+  count += 1
+  puts "processed paper-author-relationships: " + count.to_s
+end
