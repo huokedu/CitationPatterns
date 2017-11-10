@@ -56,4 +56,7 @@ Um die Arbeit mit dieser Menge an Daten zu vereinfachen sollen hier folgende Auf
 | [`Debatte::basic` :soon:]() | `A =Kritik=> B`  | Must-have |<ul><li>[ ] Done</li></ul>|
 | [`Debatte::complex` :soon:]() | `responses to article x`, `critics to argument by mr. x`, `cluster like >debates sparked by x<` etc. | TBD(decided after Debatte::basic) |<ul><li>[ ] Done</li></ul>|
 
-## Zeitplan
+## Präsentationen
+
+
+[`1. Präsentation`](presentations/first_presentation.md) 
