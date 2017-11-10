@@ -1,3 +1,6 @@
+<!-- $theme: invert -->
+
+![bg](demo_bg.png)
 # Citation Patterns in Research Papers
 
 
@@ -6,9 +9,11 @@
 ## Dennis Kreußel
 
 ---
+<!-- page_number: true -->
 
 # Datensätze
 
+---
 
 ## ANN
 	x Knoten, Y Kanten
@@ -27,12 +32,11 @@
 # Zielstellung
 
 * Abbildung Debatte etc.
+*
 
 ---
 
 # Relevante Konzepte
-
-
 
 ---
 
@@ -42,10 +46,14 @@
 
 ---
 
-# 
+# Demo
 
 ---
 
-#
+# Ausblick
+
+---
+
+# 
 
 ---
