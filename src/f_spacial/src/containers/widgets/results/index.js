@@ -26,11 +26,13 @@ class Results extends Component {
         <Collapse isOpened={this.props.expanded}>
           <div className="results_container">
             <div className="results_column not_selected">
-              <div className="results_column_header">
-                Queried
-              </div>
               {this.props.data.result.length > 0 ?
-                <ResultsTable data={this.props.data}/>
+                <div>
+                  <div className="results_column_header">
+                    Queried
+                  </div>
+                  <ResultsTable data={this.props.data}/>
+                </div>
                 :
                 <EmptyState />
               }
