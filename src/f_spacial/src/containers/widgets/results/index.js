@@ -12,6 +12,7 @@ import {Collapse} from 'react-collapse';
 
 //Components
 import ResultsTable from './resultsTable';
+import EmptyState from './empty_state';
 
 // Assets
 import './stylesheets/Results.css';
@@ -28,7 +29,11 @@ class Results extends Component {
               <div className="results_column_header">
                 Queried
               </div>
-              <ResultsTable data={this.props.data}/>
+              {this.props.data.result.length > 0 ?
+                <ResultsTable data={this.props.data}/>
+                :
+                <EmptyState />
+              }
             </div>
           </div>
         </Collapse>
