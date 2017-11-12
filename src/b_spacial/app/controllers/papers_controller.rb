@@ -10,7 +10,7 @@ class PapersController < ApplicationController
 
   # GET /papers/1
   def show
-    render json: @paper
+    render json: {:result => @paper, :references => @paper.references_out.collect {|p| {:id => p.id, :title => p.title, :published => p.published}} }
   end
 
   # POST /papers
