@@ -20,7 +20,24 @@ class ShowPaper extends Component {
     return (
       <div>
         {this.props.expanded && <div className="results_container">
-          {'Here could be shown more information for now have a look at some lorem ipsum:  \n \n Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'}
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  References
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              { this.props.data.references.map((ref, index) => {
+                  return (<tr role="row" key={this.props.data.result.id + '' + index}>
+                    <td>{ref.published + ', ' + ref.title}</td>
+                  </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
         </div>
         }
       </div>
