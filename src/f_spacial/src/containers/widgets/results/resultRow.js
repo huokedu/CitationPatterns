@@ -10,7 +10,7 @@ import { bindActionCreators } from 'redux';
 import './stylesheets/Results.css';
 
 // Actions
-import { WidgetActions } from '../../../redux/widgets';
+import { QueryActions } from '../../../redux/query';
 
 class ResultRow extends Component {
   render() {
@@ -18,10 +18,7 @@ class ResultRow extends Component {
         <tr
           className="results_row"
           onClick={() => {
-            this.props.widgetsActions.add({
-              type: 'SHOW_PAPER',
-              data: this.props.data
-            });
+            this.props.queryActions.querySingle(this.props.data.paper.id , this.props.data.paper.title);
           }}
         >
           <td>{this.props.data.paper.title}</td>
@@ -36,7 +33,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  widgetsActions: bindActionCreators(WidgetActions, dispatch),
+  queryActions: bindActionCreators(QueryActions, dispatch),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ResultRow);

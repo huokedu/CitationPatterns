@@ -68,6 +68,58 @@ export const QueryActions = {
       });
     }
   },
+  querySingle: (id, title) => {
+    return dispatch => {
+      dispatch({
+        type: QueryConstants.QUERY,
+        query: id,
+      })
+      dispatch({
+        type: QueryConstants.QUERY_BEGIN
+      });
+      let queryTimeIdentifier = new Date();
+      dispatch({
+        type: WidgetActionNames.ADD,
+        widget: {
+          type: WidgetTypeNames.PENDING,
+          data: {
+            query: title
+          },
+          created_at: queryTimeIdentifier
+        }
+      })
+      fetch(`http://localhost:16198/papers/${id}`)
+      .then(response => response.json())
+      .then(json =>
+          {
+          if(json.error) {
+            dispatch({
+              type: WidgetActionNames.UPDATE,
+              widget: {
+                type: WidgetTypeNames.ERROR,
+                data: Object.assign({}, {result: json}, {query: title}),
+                created_at: queryTimeIdentifier
+              },
+              queryTimestamp: queryTimeIdentifier
+            });
+          }else {
+            dispatch({
+              type: WidgetActionNames.UPDATE,
+              widget: {
+                type: WidgetTypeNames.SHOW_PAPER,
+                data: json,
+                created_at: queryTimeIdentifier
+              },
+              queryTimestamp: queryTimeIdentifier
+            });
+          }
+        dispatch({
+          type: QueryConstants.QUERY_FINISH,
+          results: json
+        });
+      });
+    }
+  }
 }
 
  /*********************************

@@ -23,7 +23,7 @@ class WidgetHeader extends Component {
     }
     switch(this.props.widget.type) {
         case WidgetTypeNames.SHOW_PAPER:
-          headers.description = this.props.widget.data.paper.title;
+          headers.description = this.props.widget.data.result.paper.title;
           break;
         case WidgetTypeNames.RESULTS:
           headers.description = this.props.widget.data.query;
