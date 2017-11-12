@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 // NPM Modules
 
@@ -8,6 +10,9 @@ import React, { Component } from 'react';
 import WidgetTypeNames from '../../constants/widgets';
 
 // Assets
+
+// Actions
+import { WidgetActions } from '../../redux/widgets';
 
 class WidgetHeader extends Component {
 
@@ -56,11 +61,22 @@ class WidgetHeader extends Component {
               onClick={this.props.toggleExpand}
             ></i>
           }
-          <i className="fa fa-times" aria-hidden="true"></i>
+          <i
+            className="fa fa-times"
+            aria-hidden="true"
+            onClick={() => this.props.widgetActions.remove(this.props.widget)}
+          ></i>
         </div>
       </div>
     );
   }
 }
 
-export default WidgetHeader;
+const mapStateToProps = state => ({
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  widgetActions: bindActionCreators(WidgetActions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(WidgetHeader);
