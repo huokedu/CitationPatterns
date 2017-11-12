@@ -10,5 +10,5 @@ class Paper
 
 
   has_many :out, :references_out, type: :references, model_class: :Paper
-  has_many :in, :references_in, type: :references
+  has_many :in, :references_in, type: :references, model_class: :Paper
 end
