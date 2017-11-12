@@ -26,7 +26,7 @@ class Results extends Component {
         <Collapse isOpened={this.props.expanded}>
           <div className="results_container">
             <div className="results_column not_selected">
-              {this.props.data.result.length > 0 ?
+              {this.props.data.resultSet.length > 0 ?
                 <div>
                   <div className="results_column_header">
                     Queried

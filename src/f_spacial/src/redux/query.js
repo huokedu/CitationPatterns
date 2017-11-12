@@ -55,7 +55,7 @@ export const QueryActions = {
               type: WidgetActionNames.UPDATE,
               widget: {
                 type: WidgetTypeNames.RESULTS,
-                data: Object.assign({}, {result: json}, {query: queryString}),
+                data: Object.assign({}, {resultSet: json}, {query: queryString}),
                 created_at: queryTimeIdentifier
               },
               queryTimestamp: queryTimeIdentifier

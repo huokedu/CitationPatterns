@@ -24,7 +24,7 @@ class ResultsTable extends Component {
           </tr>
         </thead>
         <tbody>
-          { this.props.data.result.map(((result, i) => {
+          { this.props.data.resultSet.map(((result, i) => {
             return (
               <ResultRow
                 key={i}
