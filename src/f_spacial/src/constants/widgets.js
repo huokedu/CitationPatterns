@@ -1,19 +1,19 @@
 const WidgetType = {
     results: {
         name: 'results',
-        description: 'results FOR QUERY',
+        description: 'RESULTS FOR QUERY',
     },
     map: {
         name: 'map',
-        description: 'map FOR',
+        description: 'MAP FOR',
     },
     error: {
         name: 'error',
-        description: 'error FOR'
+        description: 'ERROR FOR'
     },
     pending: {
         name: 'pending',
-        description: 'pending FOR QUERY',
+        description: 'PENDING FOR QUERY',
     },
     showPaper: {
         name: 'showPaper',
