@@ -11,7 +11,7 @@ import WidgetHeader from './widget_header';
 
 
 // Constants
-import WidgetTypeNames from '../../constants/widgets';
+import WidgetType from '../../constants/widgets';
 
 // Assets
 import './stylesheets/Widget.css';
@@ -23,7 +23,7 @@ export default class Widget extends Component {
   constructor(props){
     super(props);
     this.state = {
-      type : WidgetTypeNames.PENDING,
+      type : WidgetType.pending.name,
       expanded: true,
     };
     this.toggleExpand = this.toggleExpand.bind(this);
@@ -39,16 +39,16 @@ export default class Widget extends Component {
     let type = this.props.widget.type;
     let widgetToRender = null;
     switch(type) {
-        case WidgetTypeNames.SHOW_PAPER:
+        case WidgetType.showPaper.name:
           widgetToRender = <ShowPaper expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetTypeNames.RESULTS:
+        case WidgetType.results.name:
           widgetToRender = <Results expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetTypeNames.ERROR:
+        case WidgetType.error.name:
           widgetToRender = <Errors expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetTypeNames.PENDING:
+        case WidgetType.pending.name:
           widgetToRender = <Pending />;
           break;
         default:

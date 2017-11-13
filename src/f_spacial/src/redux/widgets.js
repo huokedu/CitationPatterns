@@ -6,7 +6,7 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
-import { WidgetTypeDescriptions } from '../constants/widgets';
+import WidgetType from '../constants/widgets';
 
 export const WidgetActionNames = {
   ADD: 'ADD',
@@ -60,7 +60,9 @@ const defaultWidgetState = {
 // headers
 // to the object before returning an changed state
 function addDisplayStringsToWidget (widget) {
-  const header_type = WidgetTypeDescriptions[widget.type];
+  console.log("test");
+  console.log(widget.type);
+  const header_type = WidgetType[widget.type].description;
   return Object.assign({}, widget, { header_type: header_type});
 }
 
