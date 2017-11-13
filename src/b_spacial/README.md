@@ -1,5 +1,10 @@
 # Backend
 
+## Database setup
+
+```bash
+rake db:seed
+```
 
 ## Dev install
 ```bash
