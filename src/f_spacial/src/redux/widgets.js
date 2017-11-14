@@ -6,13 +6,13 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
-import { WidgetTypeDescriptions } from '../constants/widgets';
+import WidgetType from '../constants/widgets';
 
 export const WidgetActionNames = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
   UPDATE: 'UPDATE'
-}
+};
 
 
 export const WidgetActions = {
@@ -45,7 +45,7 @@ export const WidgetActions = {
       })
     }
   }
-}
+};
 
  /*********************************
  *        REDUCER SECTION         *
@@ -53,14 +53,16 @@ export const WidgetActions = {
 
 const defaultWidgetState = {
   widgets: []
-}
+};
 
 // Since a widget object should keep all the information necessary to
 // display the widget we add all the needed strings associated with
 // headers
 // to the object before returning an changed state
 function addDisplayStringsToWidget (widget) {
-  const header_type = WidgetTypeDescriptions[widget.type];
+  console.log("test");
+  console.log(widget.type);
+  const header_type = WidgetType[widget.type].description;
   return Object.assign({}, widget, { header_type: header_type});
 }
 
@@ -103,4 +105,4 @@ export const widgetReducer = (state = defaultWidgetState, action) => {
       // When a unknown action is passed we should return the state unchanged
       return state;
   }
-}
+};
