@@ -9,10 +9,9 @@ import './stylesheets/Widget.css';
 
 class Loading extends Component {
   render() {
-    // noinspection CheckTagEmptyBody
       return (
         <div className="loader">
-          <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+          <i className="fa fa-spinner fa-pulse fa-3x fa-fw" />
           <span className="sr-only">Loading...</span>
         </div>
       );
