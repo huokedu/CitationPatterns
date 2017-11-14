@@ -7,8 +7,10 @@ import Errors from './errors';
 import Results from './results';
 import ShowPaper from './show_paper';
 import Pending from './pending';
+import Graph from './graph';
 import WidgetHeader from './widget_header';
 
+import data from './graph/moq.js';
 
 // Constants
 import WidgetType from '../../constants/widgets';
@@ -50,6 +52,9 @@ export default class Widget extends Component {
           break;
         case WidgetType.pending.name:
           widgetToRender = <Pending />;
+          break;
+        case 'GRAPH':
+          widgetToRender = <Graph data={data} width={600} height={500} />;
           break;
         default:
           widgetToRender = <div />;

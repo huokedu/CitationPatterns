@@ -38,9 +38,9 @@ class Dropdown extends React.Component {
   }
 
   renderListItems() {
-		var items = [];
-		for (var i = 0; i < this.props.list.length; i++) {
-			var item = this.props.list[i];
+		let items = [];
+		for (let i = 0; i < this.props.list.length; i++) {
+			const item = this.props.list[i];
 			items.push(<div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
 				{item.component}
         <div className="tooltiptext">
