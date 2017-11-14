@@ -13,7 +13,7 @@ const QueryConstants = {
   QUERY: 'QUERY',
   QUERY_BEGIN: 'QUERY_BEGIN',
   QUERY_FINISH: 'QUERY_FINISH'
-}
+};
 
 export const QueryActions = {
   query: (queryString) => {
@@ -21,7 +21,7 @@ export const QueryActions = {
       dispatch({
         type: QueryConstants.QUERY,
         query: queryString,
-      })
+      });
       dispatch({
         type: QueryConstants.QUERY_BEGIN
       });
@@ -35,7 +35,7 @@ export const QueryActions = {
           },
           created_at: queryTimeIdentifier
         }
-      })
+      });
       fetch(`http://localhost:16198/query?title=${queryString}`)
       .then(response => response.json())
       .then(json =>
@@ -87,7 +87,7 @@ export const QueryActions = {
           },
           created_at: queryTimeIdentifier
         }
-      })
+      });
       fetch(`http://localhost:16198/papers/${id}`)
       .then(response => response.json())
       .then(json =>
@@ -120,7 +120,7 @@ export const QueryActions = {
       });
     }
   }
-}
+};
 
  /*********************************
  *        REDUCER SECTION         *
@@ -130,7 +130,7 @@ const defaultQueryState = {
   query: "",
   isFetching: false,
   results: []
-}
+};
 
 export const queryReducer = (state = defaultQueryState, action) => {
   switch(action.type) {
@@ -150,4 +150,4 @@ export const queryReducer = (state = defaultQueryState, action) => {
     default:
       return state;
   }
-}
+};

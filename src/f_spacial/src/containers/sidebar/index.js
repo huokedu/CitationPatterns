@@ -17,7 +17,13 @@ import { WidgetActions } from '../../redux/widgets';
 class Sidebar extends React.Component {
 
   render() {
-    return (
+    // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      return (
       <div className="sidebar">
         <div className="sidebar_body">
           <ul className="sidebar_menu">
@@ -49,7 +55,7 @@ class Sidebar extends React.Component {
 const mapStateToProps = state => ({
   widgets: state.widgets,
   routing: state.routing,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   widgetActions: bindActionCreators(WidgetActions, dispatch),

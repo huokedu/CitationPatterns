@@ -11,7 +11,13 @@ import './stylesheets/empty_state.css';
 
 class EmptyState extends Component {
   render() {
-    return (
+    // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      // noinspection CheckTagEmptyBody
+      return (
       <div className="emptyState">
         <div className="wrap">
           <i className="fa fa-search search-1"></i>

@@ -11,13 +11,13 @@ import createHistory from 'history/createBrowserHistory';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../redux'
 
-export const history = createHistory()
+export const history = createHistory();
 
 //const enhancers = []
 const middleware = [
   thunk,
   routerMiddleware(history),
-]
+];
 
 // Configure the logger middleware
 const logger = createLogger({
@@ -45,7 +45,7 @@ export function configure(initialState) {
   var configStore = createStoreWithMiddleware(
     rootReducer,
     initialState,
-  )
+  );
 
   // Snippet to allow hot reload to work with reducers
   if(module.hot) {

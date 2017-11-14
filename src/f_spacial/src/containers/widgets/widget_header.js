@@ -20,7 +20,7 @@ class WidgetHeader extends Component {
     let headers= {
       type: this.props.widget.header_type,
       description: ""
-    }
+    };
     switch(this.props.widget.type) {
         case WidgetType.showPaper.name:
           headers.description = this.props.widget.data.result.paper.title;
@@ -73,7 +73,7 @@ class WidgetHeader extends Component {
 }
 
 const mapStateToProps = state => ({
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   widgetActions: bindActionCreators(WidgetActions, dispatch),

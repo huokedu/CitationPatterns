@@ -74,7 +74,7 @@ class Dropdown extends React.Component {
 
 const mapStateToProps = state => ({
   routing: state.routing,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   //exampleActions: bindActionCreators(ExampleActions, dispatch),

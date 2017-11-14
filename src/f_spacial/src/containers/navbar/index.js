@@ -43,7 +43,7 @@ var DB =[
       largest_connected_component_size: 19712,
     }
   }
-]
+];
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -80,7 +80,7 @@ class Navbar extends React.Component {
 
 const mapStateToProps = state => ({
   routing: state.routing,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   //exampleActions: bindActionCreators(ExampleActions, dispatch),

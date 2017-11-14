@@ -12,7 +12,7 @@ export const WidgetActionNames = {
   ADD: 'ADD',
   REMOVE: 'REMOVE',
   UPDATE: 'UPDATE'
-}
+};
 
 
 export const WidgetActions = {
@@ -45,7 +45,7 @@ export const WidgetActions = {
       })
     }
   }
-}
+};
 
  /*********************************
  *        REDUCER SECTION         *
@@ -53,7 +53,7 @@ export const WidgetActions = {
 
 const defaultWidgetState = {
   widgets: []
-}
+};
 
 // Since a widget object should keep all the information necessary to
 // display the widget we add all the needed strings associated with
@@ -105,4 +105,4 @@ export const widgetReducer = (state = defaultWidgetState, action) => {
       // When a unknown action is passed we should return the state unchanged
       return state;
   }
-}
+};
