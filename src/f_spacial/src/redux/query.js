@@ -6,14 +6,14 @@
 /**********************************
  *        ACTIONS SECTION         *
  **********************************/
-import WidgetTypeNames from '../constants/widgets';
+import WidgetType from '../constants/widgets';
 import { WidgetActionNames } from './widgets';
 
 const QueryConstants = {
   QUERY: 'QUERY',
   QUERY_BEGIN: 'QUERY_BEGIN',
   QUERY_FINISH: 'QUERY_FINISH'
-}
+};
 
 export const QueryActions = {
   query: (queryString) => {
@@ -21,7 +21,7 @@ export const QueryActions = {
       dispatch({
         type: QueryConstants.QUERY,
         query: queryString,
-      })
+      });
       dispatch({
         type: QueryConstants.QUERY_BEGIN
       });
@@ -29,13 +29,13 @@ export const QueryActions = {
       dispatch({
         type: WidgetActionNames.ADD,
         widget: {
-          type: WidgetTypeNames.PENDING,
+          type: WidgetType.pending.name,
           data: {
                   query: queryString
           },
           created_at: queryTimeIdentifier
         }
-      })
+      });
       fetch(`http://localhost:16198/query?title=${queryString}`)
       .then(response => response.json())
       .then(json =>
@@ -44,7 +44,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetTypeNames.ERROR,
+                type: WidgetType.error.name,
                 data: Object.assign({}, {result: json}, {query: queryString}),
                 created_at: queryTimeIdentifier
               },
@@ -54,7 +54,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetTypeNames.RESULTS,
+                type: WidgetType.results.name,
                 data: Object.assign({}, {resultSet: json}, {query: queryString}),
                 created_at: queryTimeIdentifier
               },
@@ -73,7 +73,7 @@ export const QueryActions = {
       dispatch({
         type: QueryConstants.QUERY,
         query: id,
-      })
+      });
       dispatch({
         type: QueryConstants.QUERY_BEGIN
       });
@@ -81,13 +81,13 @@ export const QueryActions = {
       dispatch({
         type: WidgetActionNames.ADD,
         widget: {
-          type: WidgetTypeNames.PENDING,
+          type: WidgetType.pending.name,
           data: {
             query: title
           },
           created_at: queryTimeIdentifier
         }
-      })
+      });
       fetch(`http://localhost:16198/papers/${id}`)
       .then(response => response.json())
       .then(json =>
@@ -96,7 +96,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetTypeNames.ERROR,
+                type: WidgetType.error.name,
                 data: Object.assign({}, {result: json}, {query: title}),
                 created_at: queryTimeIdentifier
               },
@@ -106,7 +106,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetTypeNames.SHOW_PAPER,
+                type: WidgetType.showPaper.name,
                 data: json,
                 created_at: queryTimeIdentifier
               },
@@ -120,7 +120,7 @@ export const QueryActions = {
       });
     }
   }
-}
+};
 
  /*********************************
  *        REDUCER SECTION         *
@@ -130,7 +130,7 @@ const defaultQueryState = {
   query: "",
   isFetching: false,
   results: []
-}
+};
 
 export const queryReducer = (state = defaultQueryState, action) => {
   switch(action.type) {
@@ -150,4 +150,4 @@ export const queryReducer = (state = defaultQueryState, action) => {
     default:
       return state;
   }
-}
+};

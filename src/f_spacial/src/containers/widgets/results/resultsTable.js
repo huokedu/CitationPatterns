@@ -44,7 +44,7 @@ class ResultsTable extends Component {
 const mapStateToProps = state => ({
   query: state.query,
   routing: state.routing,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   queryActions: bindActionCreators(QueryActions, dispatch),

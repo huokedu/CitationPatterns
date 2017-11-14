@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
 const mapStateToProps = state => ({
   routing: state.routing,
   query: state.query,
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   queryActions: bindActionCreators(QueryActions, dispatch),

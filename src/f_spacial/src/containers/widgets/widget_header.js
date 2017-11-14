@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 // Components
 
 // Constants
-import WidgetTypeNames from '../../constants/widgets';
+import WidgetType from '../../constants/widgets';
 
 // Assets
 
@@ -20,18 +20,18 @@ class WidgetHeader extends Component {
     let headers= {
       type: this.props.widget.header_type,
       description: ""
-    }
+    };
     switch(this.props.widget.type) {
-        case WidgetTypeNames.SHOW_PAPER:
+        case WidgetType.showPaper.name:
           headers.description = this.props.widget.data.result.paper.title;
           break;
-        case WidgetTypeNames.RESULTS:
+        case WidgetType.results.name:
           headers.description = this.props.widget.data.query;
           break;
-        case WidgetTypeNames.ERROR:
+        case WidgetType.error.name:
           headers.description = this.props.widget.data.query;
           break;
-        case WidgetTypeNames.PENDING:
+        case WidgetType.pending.name:
           headers.description = 'for Query!';
           break;
         default:
@@ -73,7 +73,7 @@ class WidgetHeader extends Component {
 }
 
 const mapStateToProps = state => ({
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
   widgetActions: bindActionCreators(WidgetActions, dispatch),

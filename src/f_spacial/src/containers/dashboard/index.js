@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => ({
   routing: state.routing,
   widgets: state.widgets
-})
+});
 
 const mapDispatchToProps = (dispatch) => ({
 });
