@@ -42,7 +42,7 @@ const createStoreWithMiddleware = compose(
 export function configure(initialState) {
 
   // Create the redux store and add middleware to it
-  var configStore = createStoreWithMiddleware(
+  let configStore = createStoreWithMiddleware(
     rootReducer,
     initialState,
   );

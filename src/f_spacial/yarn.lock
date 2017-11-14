@@ -10,6 +10,48 @@
   version "16.0.22"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.0.22.tgz#19ad106e124aceebd2b4d430a278d55413ee8759"
 
+"@vx/curve@0.0.143":
+  version "0.0.143"
+  resolved "https://registry.yarnpkg.com/@vx/curve/-/curve-0.0.143.tgz#022c6a8a07ec019ed5820f0214da21fd93645724"
+  dependencies:
+    d3-shape "^1.0.6"
+
+"@vx/gradient@^0.0.143":
+  version "0.0.143"
+  resolved "https://registry.yarnpkg.com/@vx/gradient/-/gradient-0.0.143.tgz#9ce212db8f9add9221c8eb142c5ac1026d13cab9"
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.7"
+
+"@vx/group@0.0.143", "@vx/group@^0.0.143":
+  version "0.0.143"
+  resolved "https://registry.yarnpkg.com/@vx/group/-/group-0.0.143.tgz#38dbd3fa2740d573c6fdfc691ebc15e85d3eb01b"
+  dependencies:
+    classnames "^2.2.5"
+
+"@vx/hierarchy@^0.0.144":
+  version "0.0.144"
+  resolved "https://registry.yarnpkg.com/@vx/hierarchy/-/hierarchy-0.0.144.tgz#8652f5ea37e3b110cfab9785c19b0a69721bf87a"
+  dependencies:
+    "@vx/group" "0.0.143"
+    classnames "^2.2.5"
+    d3-hierarchy "^1.1.4"
+
+"@vx/point@0.0.143":
+  version "0.0.143"
+  resolved "https://registry.yarnpkg.com/@vx/point/-/point-0.0.143.tgz#7b6dfa611175ee1b74e3c392072589a79dadf265"
+
+"@vx/shape@^0.0.146":
+  version "0.0.146"
+  resolved "https://registry.yarnpkg.com/@vx/shape/-/shape-0.0.146.tgz#52ef410ce06737eb4591dc6fb8be4237d31a46d5"
+  dependencies:
+    "@vx/curve" "0.0.143"
+    "@vx/group" "0.0.143"
+    "@vx/point" "0.0.143"
+    classnames "^2.2.5"
+    d3-shape "^1.2.0"
+    prop-types "^15.5.10"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -1869,6 +1911,10 @@ d3-geo@^1.9.0:
   dependencies:
     d3-array "1"
 
+d3-hierarchy@^1.1.4, d3-hierarchy@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/d3-hierarchy/-/d3-hierarchy-1.1.5.tgz#a1c845c42f84a206bcf1c01c01098ea4ddaa7a26"
+
 d3-interpolate@1:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.1.5.tgz#69e099ff39214716e563c9aec3ea9d1ea4b8a79f"
@@ -1911,7 +1957,7 @@ d3-selection@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/d3-selection/-/d3-selection-1.0.2.tgz#ae662afd4702ac9c5da039b2107a1764fa1c9070"
 
-d3-shape@^1.2.0:
+d3-shape@^1.0.6, d3-shape@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.2.0.tgz#45d01538f064bafd05ea3d6d2cb748fd8c41f777"
   dependencies:
@@ -5207,7 +5253,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:

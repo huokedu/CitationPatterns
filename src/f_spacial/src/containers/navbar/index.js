@@ -14,7 +14,7 @@ import Dropdown from '../dropdown';
 
 // Actions
 
-var DB =[
+let DB =[
   {
     name: "dblp",
     component: <span>DBLP</span>,

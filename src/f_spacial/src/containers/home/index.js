@@ -28,7 +28,7 @@ class Home extends React.Component {
   }
 }
 
-var styles = StyleSheet.create({
+let styles = StyleSheet.create({
   header: {
     backgroundColor: '#222',
     height: '150px',
