@@ -25,7 +25,7 @@ export default class Widget extends Component {
   constructor(props){
     super(props);
     this.state = {
-      type : WidgetType.pending.name,
+      type : WidgetType.PENDING.NAME,
       expanded: true,
     };
     this.toggleExpand = this.toggleExpand.bind(this);
@@ -41,16 +41,16 @@ export default class Widget extends Component {
     let type = this.props.widget.type;
     let widgetToRender = null;
     switch(type) {
-        case WidgetType.showPaper.name:
+        case WidgetType.SHOW_PAPER.NAME:
           widgetToRender = <ShowPaper expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetType.results.name:
+        case WidgetType.RESULTS.NAME:
           widgetToRender = <Results expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetType.error.name:
+        case WidgetType.ERROR.NAME:
           widgetToRender = <Errors expanded={this.state.expanded} data={this.props.widget.data}/>;
           break;
-        case WidgetType.pending.name:
+        case WidgetType.PENDING.NAME:
           widgetToRender = <Pending />;
           break;
         case 'GRAPH':
