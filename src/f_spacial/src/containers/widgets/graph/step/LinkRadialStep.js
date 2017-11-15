@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
-import { pointRadial } from 'd3-shape';
 
 LinkRadialStep.propTypes = {
   innerRef: PropTypes.func
