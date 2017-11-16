@@ -9,6 +9,7 @@ import './stylesheets/Tooltip.css';
 // NPM Modules
 
 // Assets
+import StatItem from './stat_item';
 
 // Actions
 
@@ -37,16 +38,34 @@ class Dropdown extends React.Component {
     });
   }
 
+  renderStatItem(value, description, key) {
+    if (
+        typeof value !== 'undefined'
+        && typeof description !== 'undefined'
+        && typeof key !== 'undefined'
+    ) {
+      return  <StatItem
+        key={key}
+        value={value}
+        description={description}
+      />
+    }
+  }
+
   renderListItems() {
 		let items = [];
 		for (let i = 0; i < this.props.list.length; i++) {
 			const item = this.props.list[i];
-			items.push(<div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
-				{item.component}
-        <div className="tooltiptext">
-          <pre>{JSON.stringify(item.stats, null, 2)}</pre>
-        </div>
-			</div>);
+			items.push(
+        <div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
+  				{ item.component }
+          <div className="tooltiptext">
+            {this.renderStatItem( item.stats.nodes, "Nodes", i + 'numberNodes' )}
+            {this.renderStatItem( item.stats.edges, "Edges", i + 'numberEdges' )}
+            {this.renderStatItem( item.stats.diameter,"Diameter", i + 'diameter' )}
+            {this.renderStatItem( item.stats.average_degree,  "ØDegree", i + 'avgDegree' )}
+          </div>
+  			</div>);
 		}
 		return items;
 	}

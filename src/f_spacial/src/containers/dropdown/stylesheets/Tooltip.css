@@ -7,22 +7,53 @@
     /* Position the tooltip text - see examples below! */
     position: absolute;
     z-index: 1;
+    display: flex;
+    flex: 1;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
-    text-align: left;
-    visibility: visible;
-    top: 105%;
-    right: 50%;
-    margin-left: -60px;
+  text-align: left;
+  visibility: visible;
+  top: 105%;
+  right: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 20vw;
+  background-color: rgba(31, 70, 98, 1);
+  color: white;
+  height: auto;
+  line-height: 3vh !important;
+  font-size: 2vh;
 }
 
-.tooltip:hover .tooltiptext pre {
-  background-color: rgba(31, 70, 98, 0.8);
-  color: #fff;
-  border-radius: 6px;
-  padding: 10px 30px;
+/* */
+div.stat_item {
+  display: flex;
+  flex-basis: calc(50%);
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  flex: 1 0 auto;
+}
+
+div.stat_item:not(:nth-last-of-type(-n+2)) {
+  margin-bottom: 20px;
+}
+
+div.stat_item > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 10vw;
+  flex: 1;
+}
+
+div.stat_item > div.stat_value {
+  width: 80%;
+  border-bottom: 2px solid grey;
 }
 
 .tooltip .tooltiptext::after {
