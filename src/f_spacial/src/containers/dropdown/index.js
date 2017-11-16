@@ -9,6 +9,7 @@ import './stylesheets/Tooltip.css';
 // NPM Modules
 
 // Assets
+import StatItem from './stat_item';
 
 // Actions
 
@@ -38,14 +39,17 @@ class Dropdown extends React.Component {
   }
 
   renderStatItem(value, description, key) {
-    return  <div className="stat_item" key={key}>
-              <div className="stat_value">
-                {value}
-              </div>
-              <div className="stat_description">
-                {description}
-              </div>
-            </div>;
+    if (
+        typeof value !== 'undefined'
+        && typeof description !== 'undefined'
+        && typeof key !== 'undefined'
+    ) {
+      return  <StatItem
+        key={key}
+        value={value}
+        description={description}
+      />
+    }
   }
 
   renderListItems() {
@@ -63,10 +67,22 @@ class Dropdown extends React.Component {
               https://github.com/dnk0/CitationPatterns/issues/50
               for further discussion
             */}
-            { item.stats.nodes            ? this.renderStatItem(item.stats.nodes, "Nodes", i + 'numberNodes')                : '' }
-            { item.stats.edges            ? this.renderStatItem(item.stats.edges, "Edges", i + 'numberEdges')                : '' }
-            { item.stats.diameter         ? this.renderStatItem(item.stats.diameter, "Diameter", i + 'diameter')             : '' }
-            { item.stats.average_degree   ? this.renderStatItem(item.stats.average_degree, "ØDegree", i + 'avgDegree')       : '' }
+            {this.renderStatItem( item.stats.nodes,
+                                  "Nodes",
+                                  i + 'numberNodes'
+                                )}
+            {this.renderStatItem( item.stats.edges,
+                                  "Edges",
+                                  i + 'numberEdges'
+                                )}
+            {this.renderStatItem( item.stats.diameter,
+                                  "Diameter",
+                                  i + 'diameter'
+                                )}
+            {this.renderStatItem( item.stats.average_degree,
+                                  "ØDegree",
+                                  i + 'avgDegree'
+                                )}
           </div>
   			</div>);
 		}

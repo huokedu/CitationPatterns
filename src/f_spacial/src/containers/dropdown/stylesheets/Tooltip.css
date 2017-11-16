@@ -29,7 +29,7 @@
 }
 
 /* */
-.tooltiptext > div.stat_item {
+div.stat_item {
   display: flex;
   flex-basis: calc(50%);
   justify-content: center;
@@ -39,11 +39,11 @@
   flex: 1 0 auto;
 }
 
-.tooltiptext > div.stat_item:not(:nth-last-of-type(-n+2)) {
+div.stat_item:not(:nth-last-of-type(-n+2)) {
   margin-bottom: 20px;
 }
 
-.tooltiptext > div > div {
+div.stat_item > div {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -51,7 +51,7 @@
   flex: 1;
 }
 
-.tooltiptext > div > div.stat_value {
+div.stat_item > div.stat_value {
   width: 80%;
   border-bottom: 2px solid grey;
 }
