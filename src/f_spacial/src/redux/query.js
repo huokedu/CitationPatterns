@@ -29,7 +29,7 @@ export const QueryActions = {
       dispatch({
         type: WidgetActionNames.ADD,
         widget: {
-          type: WidgetType.pending.name,
+          type: WidgetType.PENDING.NAME,
           data: {
                   query: queryString
           },
@@ -44,7 +44,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetType.error.name,
+                type: WidgetType.ERROR.NAME,
                 data: Object.assign({}, {result: json}, {query: queryString}),
                 created_at: queryTimeIdentifier
               },
@@ -54,7 +54,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetType.results.name,
+                type: WidgetType.RESULTS.NAME,
                 data: Object.assign({}, {resultSet: json}, {query: queryString}),
                 created_at: queryTimeIdentifier
               },
@@ -81,7 +81,7 @@ export const QueryActions = {
       dispatch({
         type: WidgetActionNames.ADD,
         widget: {
-          type: WidgetType.pending.name,
+          type: WidgetType.PENDING.NAME,
           data: {
             query: title
           },
@@ -96,7 +96,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetType.error.name,
+                type: WidgetType.ERROR.NAME,
                 data: Object.assign({}, {result: json}, {query: title}),
                 created_at: queryTimeIdentifier
               },
@@ -106,7 +106,7 @@ export const QueryActions = {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
-                type: WidgetType.showPaper.name,
+                type: WidgetType.SHOW_PAPER.NAME,
                 data: json,
                 created_at: queryTimeIdentifier
               },
