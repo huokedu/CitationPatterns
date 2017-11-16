@@ -60,29 +60,10 @@ class Dropdown extends React.Component {
         <div className="tooltip" key={i} onClick={this.select.bind(null, item)}>
   				{ item.component }
           <div className="tooltiptext">
-            {/*
-              Depdended on which stats exist
-              we render the stats with descriptions
-              see
-              https://github.com/dnk0/CitationPatterns/issues/50
-              for further discussion
-            */}
-            {this.renderStatItem( item.stats.nodes,
-                                  "Nodes",
-                                  i + 'numberNodes'
-                                )}
-            {this.renderStatItem( item.stats.edges,
-                                  "Edges",
-                                  i + 'numberEdges'
-                                )}
-            {this.renderStatItem( item.stats.diameter,
-                                  "Diameter",
-                                  i + 'diameter'
-                                )}
-            {this.renderStatItem( item.stats.average_degree,
-                                  "ØDegree",
-                                  i + 'avgDegree'
-                                )}
+            {this.renderStatItem( item.stats.nodes, "Nodes", i + 'numberNodes' )}
+            {this.renderStatItem( item.stats.edges, "Edges", i + 'numberEdges' )}
+            {this.renderStatItem( item.stats.diameter,"Diameter", i + 'diameter' )}
+            {this.renderStatItem( item.stats.average_degree,  "ØDegree", i + 'avgDegree' )}
           </div>
   			</div>);
 		}
