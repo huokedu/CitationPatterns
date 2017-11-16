@@ -1,24 +1,24 @@
-const WidgetType = {
-    results: {
-        name: 'results',
-        description: 'RESULTS FOR QUERY',
-    },
-    map: {
-        name: 'map',
-        description: 'MAP FOR',
-    },
-    error: {
-        name: 'error',
-        description: 'ERROR FOR'
-    },
-    pending: {
-        name: 'pending',
-        description: 'PENDING FOR QUERY',
-    },
-    showPaper: {
-        name: 'showPaper',
-        description: 'SHOW PAPER'
-    },
+const WIDGET_TYPE = {
+  RESULTS: {
+    NAME: 'RESULTS',
+    DESCRIPTION: 'RESULTS FOR QUERY'
+  },
+  MAP: {
+    NAME: 'MAP',
+    DESCRIPTION: 'MAP FOR'
+  },
+  ERROR: {
+    NAME: 'ERROR',
+    DESCRIPTION: 'ERROR FOR'
+  },
+  PENDING: {
+    NAME: 'PENDING',
+    DESCRIPTION: 'PENDING FOR QUERY'
+  },
+  SHOW_PAPER: {
+    NAME: 'SHOW_PAPER',
+    DESCRIPTION: 'SHOW PAPER'
+  },
 };
 
-export default WidgetType;
+export default WIDGET_TYPE;
