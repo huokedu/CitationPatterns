@@ -25,19 +25,38 @@ class ResultsTable extends Component {
     });
 
     this.state = {
-      selectedPapers: selected
+      checkAll: false,
+      selectedPapers: selected,
     };
     this.handleCheck = this.handleCheck.bind(this);
+    this.checkAll = this.checkAll.bind(this);
   };
 
   handleCheck (id, isChecked) {
     let newState = Object.assign({}, this.state);
+    if (this.state.checkAll) {
+      newState.checkAll = !this.state.checkAll;
+    }
     newState.selectedPapers[id] = isChecked;
+    this.setState(newState);
+  }
+
+  checkAll () {
+    let checkAll = !this.state.checkAll;
+    let selectedPapers = {};
+    Object.keys(this.state.selectedPapers).forEach((key, index) => {
+      selectedPapers[key] = checkAll;
+    });
+    let newState = Object.assign({},
+      {selectedPapers:selectedPapers},
+      {checkAll: checkAll});
     this.setState(newState);
   }
 
   render() {
     return (
+      <div>
+        {JSON.stringify(this.state)}
       <table>
         <thead>
           <tr>
@@ -46,8 +65,8 @@ class ResultsTable extends Component {
             <th><input
               type="checkbox"
               name="selected_paper"
-              checked={this.state.isSelected}
-              onChange={this.handleChange}
+              checked={this.state.checkAll}
+              onChange={this.checkAll}
             /></th>
           </tr>
         </thead>
@@ -58,12 +77,14 @@ class ResultsTable extends Component {
                 key={i}
                 queried
                 data={result}
+                checked = {this.state.selectedPapers[result.paper.id]}
                 onChange={this.handleCheck}
               />
             );
           }))}
         </tbody>
       </table>
+    </div>
     );
   }
 }

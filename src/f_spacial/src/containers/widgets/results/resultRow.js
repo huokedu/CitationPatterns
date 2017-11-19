@@ -16,13 +16,13 @@ class ResultRow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSelected: true
+      checked: props.checked
     };
     this.handleChange = this.handleChange.bind(this);
   };
 
   handleChange(event) {
-    this.setState({isSelected: event.target.checked});
+    this.setState({checked: event.target.checked});
     this.props.onChange(this.props.data.paper.id, event.target.checked);
   };
 
@@ -44,7 +44,7 @@ class ResultRow extends Component {
           <input
             type="checkbox"
             name="selected_paper"
-            checked={this.state.isSelected}
+            checked={this.props.checked}
             onChange={this.handleChange}
           />
         </td>
