@@ -17,7 +17,8 @@ const QueryConstants = {
 
 export const QueryActions = {
   query: (queryString) => {
-    return dispatch => {
+    return (dispatch, getState) => {
+      console.log(getState());
       dispatch({
         type: QueryConstants.QUERY,
         query: queryString,
@@ -36,7 +37,7 @@ export const QueryActions = {
           created_at: queryTimeIdentifier
         }
       });
-      fetch(`http://localhost:16198/query?title=${queryString}`)
+      fetch(getState().dataset.url +`/query?title=${queryString}`)
       .then(response => response.json())
       .then(json =>
           {
