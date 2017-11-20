@@ -18,7 +18,6 @@ const QueryConstants = {
 export const QueryActions = {
   query: (queryString) => {
     return (dispatch, getState) => {
-      console.log(getState());
       dispatch({
         type: QueryConstants.QUERY,
         query: queryString,
@@ -70,7 +69,7 @@ export const QueryActions = {
     }
   },
   querySingle: (id, title) => {
-    return dispatch => {
+    return (dispatch, getState) => {
       dispatch({
         type: QueryConstants.QUERY,
         query: id,
@@ -89,7 +88,7 @@ export const QueryActions = {
           created_at: queryTimeIdentifier
         }
       });
-      fetch(`http://localhost:16198/papers/${id}`)
+      fetch(getState().dataset.url +`/papers/${id}`)
       .then(response => response.json())
       .then(json =>
           {
