@@ -37,7 +37,7 @@ class Navbar extends React.Component {
           <SearchBar />
         </div>
         <div className="header_item logo">
-          <a>Spacial</a>
+          <a>{this.props.select.papers.length}</a>
         </div>
         <div className="header_item select_db">
           <Dropdown list={api_routes.datasets} selected={this.props.dataset.api} handleSelect={this.handleSelectDB}/>
@@ -49,7 +49,8 @@ class Navbar extends React.Component {
 
 const mapStateToProps = state => ({
   routing: state.routing,
-  dataset: state.dataset
+  dataset: state.dataset,
+  select: state.select
 });
 
 const mapDispatchToProps = (dispatch) => ({
