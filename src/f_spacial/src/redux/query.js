@@ -40,12 +40,25 @@ export const QueryActions = {
       .then(response => response.json())
       .then(json =>
           {
+            console.log(json);
           if(json.error) {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
                 type: WidgetType.ERROR.NAME,
-                data: Object.assign({}, {result: json}, {query: queryString}),
+                data: Object.assign({}, {
+                                          result: {
+                                                    error:  {
+                                                              status:     json.status,
+                                                              message:    json.error,
+                                                              exception:  json.exception
+                                                            }
+                                                  }
+                                        },
+                                        {
+                                          query: queryString
+                                        }
+                                    ),
                 created_at: queryTimeIdentifier
               },
               queryTimestamp: queryTimeIdentifier
