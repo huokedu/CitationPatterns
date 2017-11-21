@@ -13,18 +13,39 @@ import './stylesheets/Results.css';
 import { QueryActions } from '../../../redux/query';
 
 class ResultRow extends Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  };
+
+  handleChange(event) {
+    this.props.onChange(this.props.data.paper.id, event.target.checked);
+  };
+
+
   render() {
     return (
-        <tr
-          className="results_row"
-          onClick={() => {
-            this.props.queryActions.querySingle(this.props.data.paper.id , this.props.data.paper.title);
-          }}
-        >
-          <td>{this.props.data.paper.title}</td>
-          <td>{this.props.data.paper.author}</td>
-        </tr>
-      );
+      <tr className="results_row">
+        <td onClick={() => {
+          this.props.queryActions.querySingle(this.props.data.paper.id , this.props.data.paper.title);
+        }}>
+          {this.props.data.paper.title}
+        </td>
+        <td onClick={() => {
+          this.props.queryActions.querySingle(this.props.data.paper.id , this.props.data.paper.title);
+        }}>
+          {this.props.data.paper.author}
+        </td>
+        <td>
+          <input
+            type="checkbox"
+            name="selected_paper"
+            checked={this.props.checked}
+            onChange={this.handleChange}
+          />
+        </td>
+      </tr>
+    );
   }
 }
 
