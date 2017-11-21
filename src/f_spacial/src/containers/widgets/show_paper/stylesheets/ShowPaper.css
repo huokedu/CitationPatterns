@@ -1,3 +1,7 @@
 .ref_table {
   width: 50%;
 }
+
+.on_click_active {
+  cursor: pointer;
+}
