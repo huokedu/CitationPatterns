@@ -65,6 +65,16 @@ export const QueryActions = {
           type: QueryConstants.QUERY_FINISH,
           results: json
         });
+      }).catch(error =>  {
+        dispatch({
+          type: WidgetActionNames.UPDATE,
+          widget: {
+            type: WidgetType.ERROR.NAME,
+            data: Object.assign({}, {result: {error: error}}, {query: queryString}),
+            created_at: queryTimeIdentifier
+          },
+          queryTimestamp: queryTimeIdentifier
+        });
       });
     }
   },
