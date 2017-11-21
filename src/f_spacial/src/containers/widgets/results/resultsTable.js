@@ -53,6 +53,26 @@ class ResultsTable extends Component {
     this.setState(newState);
   }
 
+
+  getResultRows(results) {
+    const resultRows = results.map(((result, i) => {
+      return this.getRowFromResult(result,i);
+    }));
+    return resultRows;
+  }
+
+  getRowFromResult(result, i) {
+    return (
+      <ResultRow
+        key={i}
+        queried
+        data={result}
+        checked = {this.state.selectedPapers[result.paper.id]}
+        onChange={this.handleCheck}
+      />
+    );
+  }
+
   render() {
     return (
       <table>
@@ -69,17 +89,7 @@ class ResultsTable extends Component {
           </tr>
         </thead>
         <tbody>
-          { this.props.data.resultSet.map(((result, i) => {
-            return (
-              <ResultRow
-                key={i}
-                queried
-                data={result}
-                checked = {this.state.selectedPapers[result.paper.id]}
-                onChange={this.handleCheck}
-              />
-            );
-          }))}
+          { this.getResultRows(this.props.data.resultSet) }
         </tbody>
       </table>
     );
