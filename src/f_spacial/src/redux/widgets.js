@@ -60,8 +60,6 @@ const defaultWidgetState = {
 // headers
 // to the object before returning an changed state
 function addDisplayStringsToWidget (widget) {
-  console.log("test");
-  console.log(widget.type);
   const header_type = WidgetType[widget.type].DESCRIPTION;
   return Object.assign({}, widget, { header_type: header_type});
 }

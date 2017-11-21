@@ -17,7 +17,7 @@ const QueryConstants = {
 
 export const QueryActions = {
   query: (queryString) => {
-    return dispatch => {
+    return (dispatch, getState) => {
       dispatch({
         type: QueryConstants.QUERY,
         query: queryString,
@@ -36,16 +36,29 @@ export const QueryActions = {
           created_at: queryTimeIdentifier
         }
       });
-      fetch(`http://localhost:16198/query?title=${queryString}`)
+      fetch(getState().dataset.url +`/query?title=${queryString}`)
       .then(response => response.json())
       .then(json =>
           {
+            console.log(json);
           if(json.error) {
             dispatch({
               type: WidgetActionNames.UPDATE,
               widget: {
                 type: WidgetType.ERROR.NAME,
-                data: Object.assign({}, {result: json}, {query: queryString}),
+                data: Object.assign({}, {
+                                          result: {
+                                                    error:  {
+                                                              status:     json.status,
+                                                              message:    json.error,
+                                                              exception:  json.exception
+                                                            }
+                                                  }
+                                        },
+                                        {
+                                          query: queryString
+                                        }
+                                    ),
                 created_at: queryTimeIdentifier
               },
               queryTimestamp: queryTimeIdentifier
@@ -65,11 +78,21 @@ export const QueryActions = {
           type: QueryConstants.QUERY_FINISH,
           results: json
         });
+      }).catch(error =>  {
+        dispatch({
+          type: WidgetActionNames.UPDATE,
+          widget: {
+            type: WidgetType.ERROR.NAME,
+            data: Object.assign({}, {result: {error: error}}, {query: queryString}),
+            created_at: queryTimeIdentifier
+          },
+          queryTimestamp: queryTimeIdentifier
+        });
       });
     }
   },
   querySingle: (id, title) => {
-    return dispatch => {
+    return (dispatch, getState) => {
       dispatch({
         type: QueryConstants.QUERY,
         query: id,
@@ -88,7 +111,7 @@ export const QueryActions = {
           created_at: queryTimeIdentifier
         }
       });
-      fetch(`http://localhost:16198/papers/${id}`)
+      fetch(getState().dataset.url +`/papers/${id}`)
       .then(response => response.json())
       .then(json =>
           {
