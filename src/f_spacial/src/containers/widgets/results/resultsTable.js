@@ -25,7 +25,7 @@ class ResultsTable extends Component {
     });
 
     this.state = {
-      checkAll: false,
+      checkAll: true,
       selectedPapers: selected,
     };
     this.handleCheck = this.handleCheck.bind(this);
