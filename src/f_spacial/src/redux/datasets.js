@@ -31,8 +31,8 @@ function getURLFromDataset(dataset) {
  **********************************/
 
 const defaultDatasetState = {
-  api: api_routes.datasets[0],
-  url: getURLFromDataset(api_routes.datasets[0])
+  api: api_routes.datasets[1],
+  url: getURLFromDataset(api_routes.datasets[1])
 };
 
 export const datasetReducer = (state = defaultDatasetState, action) => {
