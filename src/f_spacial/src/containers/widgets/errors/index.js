@@ -22,8 +22,8 @@ class Errors extends Component {
         {
           this.props.expanded &&
             <div>
-              <h1>{this.props.data.error}</h1>
-              <h2>{this.props.data.status}</h2>
+              <h3>{this.props.data.result.error} ({this.props.data.result.status})</h3>
+              {this.props.data.result.exception}
             </div>
         }
       </div>
