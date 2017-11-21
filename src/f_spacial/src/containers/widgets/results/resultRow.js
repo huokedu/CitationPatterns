@@ -15,14 +15,10 @@ import { QueryActions } from '../../../redux/query';
 class ResultRow extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      checked: props.checked
-    };
     this.handleChange = this.handleChange.bind(this);
   };
 
   handleChange(event) {
-    this.setState({checked: event.target.checked});
     this.props.onChange(this.props.data.paper.id, event.target.checked);
   };
 

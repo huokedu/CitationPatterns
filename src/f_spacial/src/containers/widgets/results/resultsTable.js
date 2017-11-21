@@ -12,6 +12,7 @@ import './stylesheets/Results.css';
 
 // Actions
 import { QueryActions } from '../../../redux/query';
+import { SelectActions } from '../../../redux/select';
 
 class ResultsTable extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ResultsTable extends Component {
     });
 
     this.state = {
-      checkAll: true,
+      allChecked: true,
       selectedPapers: selected,
     };
     this.handleCheck = this.handleCheck.bind(this);
@@ -34,25 +35,24 @@ class ResultsTable extends Component {
 
   handleCheck (id, isChecked) {
     let newState = Object.assign({}, this.state);
-    if (this.state.checkAll) {
-      newState.checkAll = !this.state.checkAll;
+    if (this.state.allChecked) {
+      newState.allChecked = !this.state.allChecked;
     }
     newState.selectedPapers[id] = isChecked;
     this.setState(newState);
   }
 
   checkAll () {
-    let checkAll = !this.state.checkAll;
+    let allChecked = !this.state.allChecked;
     let selectedPapers = {};
     Object.keys(this.state.selectedPapers).forEach((key, index) => {
-      selectedPapers[key] = checkAll;
+      selectedPapers[key] = allChecked;
     });
     let newState = Object.assign({},
       {selectedPapers:selectedPapers},
-      {checkAll: checkAll});
+      {allChecked: allChecked});
     this.setState(newState);
   }
-
 
   getResultRows(results) {
     const resultRows = results.map(((result, i) => {
@@ -73,6 +73,12 @@ class ResultsTable extends Component {
     );
   }
 
+  getAllSelectedPapers() {
+    return Object.keys(this.state.selectedPapers).filter((key) => {
+      return this.state.selectedPapers[key];
+    })
+  }
+
   render() {
     return (
       <table>
@@ -83,13 +89,17 @@ class ResultsTable extends Component {
             <th><input
               type="checkbox"
               name="selected_paper"
-              checked={this.state.checkAll}
+              checked={this.state.allChecked}
               onChange={this.checkAll}
-            /></th>
+            />
+            <a onClick={() => {
+                this.props.selectActions.add(this.getAllSelectedPapers());
+              }}
+            >WOW</a></th>
           </tr>
         </thead>
         <tbody>
-          { this.getResultRows(this.props.data.resultSet) }
+          {   this.getResultRows(this.props.data.resultSet) }
         </tbody>
       </table>
     );
@@ -100,10 +110,12 @@ class ResultsTable extends Component {
 const mapStateToProps = state => ({
   query: state.query,
   routing: state.routing,
+  select: state.select,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   queryActions: bindActionCreators(QueryActions, dispatch),
+  selectActions: bindActionCreators(SelectActions, dispatch),
 });
 
 
