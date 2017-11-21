@@ -95,7 +95,7 @@ class ResultsTable extends Component {
             <a onClick={() => {
                 this.props.selectActions.add(this.getAllSelectedPapers());
               }}
-            >WOW</a></th>
+            ><i className="fa fa-archive on_click_active" aria-hidden="true"></i></a></th>
           </tr>
         </thead>
         <tbody>
